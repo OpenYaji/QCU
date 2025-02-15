@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QCU Student Portal </title>
+    <title>QCU Portal </title>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'> 
     <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="images/profile1.png">
 </head>
 <body>
 
@@ -18,9 +19,24 @@
             <a href="#about">About</a>
             <a href="#services">Services</a>
             <a href="#contact">Contact</a>
-            <a href="#Student">Student Portal</a>
+            <a href="#loginform">Student Portal</a>
         </nav>
     </header>
+    <div id="login-form-overlay">
+        <div id="login-form">
+            <span class="close-button" onclick="closeLoginForm()">&times;</span>
+            <h2>Student Login</h2>
+            <img src="images/about.png" alt="" class="">
+            <form action="sc" method="post">
+                <label for="username">Student ID</label>
+                <input type="text" id="username" name="username" required>
+                <label for="password">Password </label>
+                <input type="password" id="password" name="password" required>
+
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
     <section class="home" id="home">
         <div class="home-content">
             <h3>Quezon City University</h3>
@@ -40,7 +56,6 @@
                     <a href="#"><i class='bx bxl-linkedin-square'></i></a>
                     <a href="https://github.com/OpenYaji"target="_blank"><i class='bx bxl-github'></i></a>
                  </div>
-
         </div>
 
         <div class="home-img">
