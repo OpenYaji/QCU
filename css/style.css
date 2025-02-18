@@ -45,10 +45,9 @@ section{
     border-bottom: .1rem solid rgba(0, 0, 0, .2) ;
 }
 .header .logo img {
-    width: 20px; /* Adjust as needed */
-    height: auto; /* Maintain aspect ratio */
-    /* OR */
-    height: 20px; /* Adjust as needed */
+    width: 20px;
+    height: auto; 
+    height: 20px; 
     width: auto; 
   }
 .logo{
@@ -487,19 +486,28 @@ span{
 }
 
 #login-form button {
-    background-color: var(--main-color);
-    color: white;
-    padding: 1rem 1.5rem;
-    border: none;
-    border-radius: 10rem;
-    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    font-family: "Dosis", sans-serif;
     width: 100%;
-    transition: .3s;
-}
+    height: 40px;
+    border-radius: 50px;
+    background-image: linear-gradient(135deg, #1310ec 0%,var(--main-color) 70%);
+    outline: none;
+    cursor: pointer;
+    border: none;
+    font-size: 24px;
+    color: white;
+    display: block;
+    margin: auto;
+    }
 
 #login-form button:hover {
-    background-color: #c52d29;
-}
+    background-image: linear-gradient(135deg,var(--main-color)0%, #1310ec 100%);
+    transform: translateY(3px);
+  }
+#login-form button:active{
+    opacity: 0.5;
+  }
 
 .close-button {
     position: absolute;
@@ -514,3 +522,112 @@ span{
 .close-button:hover {
     color: var(--main-color);
 }
+.image-container{
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 250px;
+    justify-items: stretch;
+    animation: animation 12s linear infinite;
+}
+
+/* From Uiverse.io by Maximinodotpy */ 
+.inputGroup {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 1em 0 1em 0;
+    max-width: 190px;
+    position: relative;
+  }
+  
+  .inputGroup input {
+    font-size: 100%;
+    padding: 0.8em;
+    outline: none;
+    border: 2px solid rgb(200, 200, 200);
+    background-color: transparent;
+    border-radius: 20px;
+    width: 100%;
+  }
+  
+  .inputGroup label {
+    font-size: 100%;
+    position: absolute;
+    left: 0;
+    padding: 0.8em;
+    margin-left: 0.5em;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    color: rgb(100, 100, 100);
+  }
+  
+  .inputGroup :is(input:focus, input:valid)~label {
+    transform: translateY(-50%) scale(.9);
+    margin: 0em;
+    margin-left: 1.3em;
+    padding: 0.4em;
+    background-color: #e8e8e8;
+  }
+  
+  .inputGroup :is(input:focus, input:valid) {
+    border-color: rgb(150, 150, 200);
+  }
+
+#loading-screen {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1001;
+  }
+  
+  .loader {
+    display: block;
+    --height-of-loader: 4px;
+    --loader-color: #ff0000;
+    width: 130px;
+    height: var(--height-of-loader);
+    border-radius: 30px;
+    background-color: #000000;
+    position: relative;
+  }
+  
+  .loader::before {
+    content: "";
+    position: absolute;
+    background: var(--loader-color);
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    border-radius: 30px;
+    animation: moving 1s ease-in-out infinite;
+  }
+  
+  @keyframes moving {
+    50% {
+      width: 100%;
+    }
+    100% {
+      width: 0;
+      right: 0;
+      left: unset;
+    }
+  }
+  
+  #success-notification {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+    z-index: 1002;
+  }

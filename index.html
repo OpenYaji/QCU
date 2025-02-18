@@ -23,20 +23,26 @@
         </nav>
     </header>
     <div id="login-form-overlay">
+        <div class="image-container">
+          </div>
         <div id="login-form">
-            <span class="close-button" onclick="closeLoginForm()">&times;</span>
-            <h2>Student Login</h2>
-            <img src="images/about.png" alt="" class="">
-            <form action="sc" method="post">
-                <label for="username">Student ID</label>
-                <input type="text" id="username" name="username" required>
-                <label for="password">Password </label>
-                <input type="password" id="password" name="password" required>
-
-                <button type="submit">Login</button>
-            </form>
+          <span class="close-button" onclick="closeLoginForm()">&times;</span>
+          <h2>Student Login</h2>
+          <img src="images/about.png" alt="" class="">
+          <form id="loginForm">  <label for="username">Student ID</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Password </label>
+            <input type="password" id="password" name="password" required>
+            <button type="button" onclick="validateLogin()">Login</button>  </form>
         </div>
-    </div>
+      </div>
+      
+      <div id="loading-screen" style="display: none;">
+        <div class="loader"></div>
+      </div>
+      <div id="success-notification">
+        Login Successful!
+      </div>
     <section class="home" id="home">
         <div class="home-content">
             <h3>Quezon City University</h3>

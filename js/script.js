@@ -99,3 +99,43 @@ loginFormOverlay.addEventListener('click', (event) => {
         closeLoginForm();
     }
 });
+
+function closeLoginForm() {
+  document.getElementById("login-form-overlay").style.display = "none";
+}
+
+function validateLogin() {
+  console.log("validateLogin called");
+
+  const studentID = document.getElementById("username").value;
+  const password = document.getElementById("password").value;
+
+  console.log("studentID:", studentID);
+  console.log("password:", password);
+
+  document.getElementById("loading-screen").style.display = "flex";
+
+  if (studentID === "23-0000" && password === "123") {
+    console.log("Login successful");
+
+    setTimeout(() => {
+      document.getElementById("loading-screen").style.display = "none";
+      document.getElementById("success-notification").style.display = "block";
+
+      setTimeout(() => {
+        console.log("Redirecting to student_portal.html");
+        window.location.href = "student.html";
+      }, 1500);
+    }, 2000);
+  } else {
+    console.log("Login failed");
+
+    document.getElementById("loading-screen").style.display = "none";
+    alert("Invalid student ID or password.");
+  }
+}
+
+document.addEventListener('DOMContentLoaded', (event) => {
+  console.log("DOM fully loaded");
+  document.getElementById('loading-screen').style.display = 'none';
+});

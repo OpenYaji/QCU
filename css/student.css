@@ -1,0 +1,242 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --bg-color: #f0f0f5;
+    --second-bg-color: #ffffff;
+    --text-color: #212529;
+    --main-color: #d9534f;
+}
+
+span {
+    color: var(--main-color);
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+}
+
+.logo img {
+    width: 23px;
+    height: 23px;
+}
+
+.logo {
+    font-size: 1.8rem;
+    color: var(--text-color);
+    font-weight: 100px;
+    cursor: default;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: var(--second-bg-color);
+    padding: 20px;
+    position: fixed;
+    height: 100%;
+    overflow-y: auto;
+    left: 0;
+    top: 0;
+}
+
+.sidebar a {
+    display: block;
+    padding: 10px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: var(--text-color);
+    transition: .3s;
+}
+
+.sidebar a:hover {
+    background-color: var(--bg-color);
+    color: var(--main-color);
+    border-radius: 1rem;
+}
+
+.sidebar a i {
+    margin-right: 1rem;
+}
+
+.content {
+    flex-grow: 1; 
+    padding: 20px;
+    margin-left: 250px; 
+    background-color: var(--bg-color);
+}
+
+.content-section {
+    display: none;
+}
+
+.content-section.active {
+    display: block;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th,
+td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: var(--main-color);
+    color: white;
+}
+
+.gwa-computation {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.gwa-computation label {
+    margin-right: 1rem;
+}
+
+.gwa-computation input {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#gwa-result {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.grade-selection {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+select {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#grades button {
+    padding: 8px 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+#grades button:hover {
+    background-color: #45a049;
+}
+
+#grades button:active {
+    background-color: #3e8e41;
+}
+
+#grades table {
+    margin-bottom: 20px;
+}
+
+
+@media (max-width: 992px) {
+    .sidebar {
+        width: 200px;
+    }
+
+    .content {
+        margin-left: 200px;
+        padding: 15px;
+    }
+
+    table {
+        font-size: 0.95rem;
+    }
+
+    th,
+    td {
+        padding: 6px;
+    }
+
+    .grade-selection {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 180px;
+    }
+
+    .content {
+        margin-left: 180px;
+        padding: 10px;
+    }
+
+    table {
+        font-size: 0.9rem;
+    }
+
+    th,
+    td {
+        padding: 5px;
+    }
+
+    .grade-selection {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    body {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 576px) {
+    .sidebar {
+        width: 150px;
+        font-size: 0.85rem;
+    }
+
+    .content {
+        margin-left: 150px;
+        padding: 5px;
+    }
+
+    table {
+        font-size: 0.8rem;
+    }
+
+    th,
+    td {
+        padding: 4px;
+    }
+
+    .grade-selection {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    body {
+        font-size: 12px;
+    }
+}
