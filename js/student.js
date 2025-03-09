@@ -256,3 +256,26 @@ function displayCurrentGrades(grades) {
 }
 
 displayCurrentGrades(currentGradesData);
+
+const logoutLink = document.querySelector('.logout-link');
+
+logoutLink.addEventListener('click', () => {
+  // Redirect to index.html
+  window.location.href = 'index.html'; 
+});
+document.addEventListener('DOMContentLoaded', function() {
+    const userDropdownToggle = document.getElementById('userDropdownToggle');
+    const userDropdown = document.getElementById('userDropdown');
+
+    userDropdownToggle.addEventListener('click', function() {
+      userDropdown.classList.toggle('show');
+    });
+
+    window.onclick = function(event) {
+      if (!event.target.matches('.user-icon')) {
+        if (userDropdown.classList.contains('show')) {
+          userDropdown.classList.remove('show');
+        }
+      }
+    };
+  });

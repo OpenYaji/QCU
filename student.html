@@ -7,18 +7,32 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="/css/student.css">
 </head>
-<body>
+<body>    
+    <header class="header">
+    <a href="#" class="logo"><span> QCU </span>P<img src="images/profile1.png" alt="">RTAL</a>
+    <nav class="navbar">
+        <ul class="dropdown">
+          <li>
+            <div class="user-icon-container">
+              <i class="bx bx-user-circle user-icon" id="userDropdownToggle"></i>
+              <div class="dropdown-content" id="userDropdown">
+                <a href="#"><i class='bx bx-cog'></i> Settings</a>
+                <a href="/index.html" class="logout-link"><i class='bx bx-log-out'></i> Logout</a>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </header>
 
     <div class="sidebar">
-        <a href="#home" class="logo"><span> QCU </span>P<img src="images/profile1.png" alt="">RTAL</a>
         <a href="#" data-section="grades"><i class='bx bx-book-open'></i>Grades</a>
         <a href="#" data-section="schedule"><i class='bx bx-calendar' ></i>Class Schedule</a>
         <a href="#" data-section="past-grades"><i class='bx bx-history' ></i>Past Grades</a>
         <a href="#" data-section="curriculum"><i class='bx bx-list-ul' ></i>Curriculum</a>
-        <a href="index.html"><i class='bx bx-log-out' ></i>Logout</a>
     </div>
     <div class="home">
-        
+
     </div>
     <div class="content">
         <div id="grades" class="content-section active">
