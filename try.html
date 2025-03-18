@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QCU Student Portal</title>
+    <link rel="stylesheet" href="try.css" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="icon" href="images/profile1.png">
+</head>
+<body>
+    <button class="sidebar-menu-button">
+        <span class="material-symbols-rounded">menu</span>
+    </button>
+    <header class="header">
+        <h1>QUEZON CITY UNIVERSITY</h1>
+        <nav class="navbar">
+            <ul class="dropdown">
+              <li>
+                <div class="user-icon-container">
+                    <img src="/images/profilepic.jpg" alt="Profile Picture" class="user-profile-image" id="userDropdownToggle">
+                    <div class="dropdown-content" id="userDropdown">
+                    <a href="#"><i class='bx bxs-user-account'></i> Account</a>
+                    <a href="/index.html" class="logout-link"><i class='bx bx-log-out'></i> Logout</a>
+                  </div>
+                </div>
+              </li>
+            </ul>
+        </nav>
+    </header>
+    <aside class="sidebar">
+        <header class="sidebar-header">
+            <a href="#" class="header-logo">
+                <img src="/images/profile.png" alt="Quezon City University" />
+            </a>
+            <button class="sidebar-toggler">
+                <span class="material-symbols-rounded">chevron_left</span>
+            </button>
+        </header>
+        <nav class="sidebar-nav">
+            <ul class="nav-list primary-nav">
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <span class="material-symbols-rounded">space_dashboard</span>
+                        <span class="nav-label">Dashboard</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li class="nav-item"><a class="nav-link dropdown-title">Dashboard</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown-container">
+                    <a href="#" class="nav-link dropdown-toggle">
+                        <span class="material-symbols-rounded">grade</span>
+                        <span class="nav-label">Grades</span>
+                        <span class="dropdown-icon material-symbols-rounded">keyboard_arrow_down</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li class="nav-item"><a class="nav-link dropdown-title">Grades</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link dropdown-link">Current Academic Performance</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link dropdown-link">Past Grades</a></li>
+                    </ul>
+                    
+                </li>
+              
+                <li class="nav-item dropdown-container">
+                    <a href="#" class="nav-link dropdown-toggle">
+                        <span class="material-symbols-rounded">book</span>
+                        <span class="nav-label">Curriculum</span>
+                        <span class="dropdown-icon material-symbols-rounded">keyboard_arrow_down</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li class="nav-item"><a class="nav-link dropdown-title">Curriculum</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link dropdown-link">College Of Computer Studies</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown-container">
+                    <a href="#" class="nav-link dropdown-toggle">
+                        <span class="material-symbols-rounded">assignment_turned_in</span>
+                        <span class="nav-label">Clearance</span>
+                        <span class="dropdown-icon material-symbols-rounded">keyboard_arrow_down</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li class="nav-item"><a class="nav-link dropdown-title">Clearance</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link dropdown-link">Accounting</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link dropdown-link">Documents</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <span class="material-symbols-rounded">schedule</span>
+                        <span class="nav-label">Class Schedule</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li class="nav-item"><a class="nav-link dropdown-title">Class Schedule</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <span class="material-symbols-rounded">settings_suggest</span>
+                        <span class="nav-label">Settings</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li class="nav-item"><a class="nav-link dropdown-title">Settings</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="nav-list secondary-nav">
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <span class="material-symbols-rounded">support_agent</span>
+                        <span class="nav-label">Support</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li class="nav-item"><a class="nav-link dropdown-title">Support</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+    <script src="try.js"></script>
+</body>
+</html>
