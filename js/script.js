@@ -46,7 +46,7 @@ ScrollReveal().reveal('.home-content h1,.about-img',{origin:'left'});
 ScrollReveal().reveal('.home-content p,.about-content',{origin:'left'});
 
 const typed = new Typed ('.multiple-text',{
-    strings: ['EDUCATION','COMPUTER STUDIES','ENGINEERING'],
+    strings: ['EDUCATION','COMPUTER STUDIES','ENGINEERING','BUSINESS', 'ACCOUNTANCY'],
     typeSpeed: 100,
     backSpeed: 100,
     backDelay: 1000,
@@ -124,7 +124,7 @@ function validateLogin() {
 
       setTimeout(() => {
         console.log("Redirecting to student_portal.html");
-        window.location.href = "student.html";
+        window.location.href = "try.html";
       }, 1500);
     }, 2000);
   } else {

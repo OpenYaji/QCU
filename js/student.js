@@ -264,18 +264,20 @@ logoutLink.addEventListener('click', () => {
   window.location.href = 'index.html'; 
 });
 document.addEventListener('DOMContentLoaded', function() {
-    const userDropdownToggle = document.getElementById('userDropdownToggle');
-    const userDropdown = document.getElementById('userDropdown');
-
-    userDropdownToggle.addEventListener('click', function() {
-      userDropdown.classList.toggle('show');
-    });
-
-    window.onclick = function(event) {
-      if (!event.target.matches('.user-icon')) {
-        if (userDropdown.classList.contains('show')) {
-          userDropdown.classList.remove('show');
+    const userProfileImage = document.getElementById('userDropdownToggle');
+    const dropdownContent = document.getElementById('userDropdown');
+  
+    if(userProfileImage && dropdownContent) {
+      userProfileImage.addEventListener('click', function(event) {
+        event.stopPropagation();
+        dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
+      });
+  
+      document.addEventListener('click', function(event) {
+        if (!userProfileImage.contains(event.target) && !dropdownContent.contains(event.target)) {
+          dropdownContent.style.display = 'none';
         }
-      }
-    };
+      });
+  
+    }
   });
