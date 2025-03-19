@@ -52,4 +52,66 @@ document.addEventListener('DOMContentLoaded', function() {
   
     }
   });
-  
+  document.addEventListener('DOMContentLoaded', function() {
+    const navLinks = document.querySelectorAll('.nav-link');
+    const contentSections = document.querySelectorAll('.content-section');
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(event) {
+            event.preventDefault();
+
+            const sectionId = this.getAttribute('data-section');
+
+            if (sectionId) {
+                contentSections.forEach(section => {
+                    section.classList.remove('active');
+                });
+
+                const targetSection = document.getElementById(sectionId);
+                if (targetSection) {
+                    targetSection.classList.add('active');
+                }
+            }
+        });
+    });
+});
+const toggleNightMode = document.querySelector('.toggle-night-mode');
+const body = document.body;
+const notificationIcon = document.querySelector('.header-icons.notification');
+
+toggleNightMode.addEventListener('click', () => {
+    body.classList.toggle('night-mode');
+    toggleNightMode.classList.toggle('bx-toggle-left');
+    toggleNightMode.classList.toggle('bx-toggle-right');
+});
+
+notificationIcon.addEventListener('mouseover', () => {
+    notificationIcon.classList.remove('bx-bell');
+    notificationIcon.classList.add('bxs-bell');
+});
+
+notificationIcon.addEventListener('mouseout', () => {
+    notificationIcon.classList.remove('bxs-bell');
+    notificationIcon.classList.add('bx-bell');
+});
+
+// Night Mode Toggle Hover
+toggleNightMode.addEventListener('mouseover', () => {
+    if (body.classList.contains('night-mode')) {
+        toggleNightMode.classList.remove('bx-toggle-left');
+        toggleNightMode.classList.add('bxs-toggle-left');
+    } else {
+        toggleNightMode.classList.remove('bx-toggle-right');
+        toggleNightMode.classList.add('bxs-toggle-right');
+    }
+});
+
+toggleNightMode.addEventListener('mouseout', () => {
+    if (body.classList.contains('night-mode')) {
+        toggleNightMode.classList.remove('bxs-toggle-left');
+        toggleNightMode.classList.add('bx-toggle-left');
+    } else {
+        toggleNightMode.classList.remove('bxs-toggle-right');
+        toggleNightMode.classList.add('bx-toggle-right');
+    }
+});

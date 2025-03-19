@@ -14,18 +14,20 @@
         <span class="material-symbols-rounded">menu</span>
     </button>
     <header class="header">
-        <h1>QUEZON CITY UNIVERSITY</h1>
         <nav class="navbar">
             <ul class="dropdown">
-              <li>
-                <div class="user-icon-container">
-                    <img src="/images/profilepic.jpg" alt="Profile Picture" class="user-profile-image" id="userDropdownToggle">
-                    <div class="dropdown-content" id="userDropdown">
-                    <a href="#"><i class='bx bxs-user-account'></i> Account</a>
-                    <a href="/index.html" class="logout-link"><i class='bx bx-log-out'></i> Logout</a>
-                  </div>
-                </div>
-              </li>
+                <li>
+                    <div class="user-icon-container">
+                        <i class='bx bx-toggle-right header-icons toggle-night-mode'></i>
+                        <i class='bx bx-bell header-icons notification'></i>
+                        <h3>Calipes, John Rey</h3>
+                        <img src="/images/profilepic.jpg" alt="Profile Picture" class="user-profile-image" id="userDropdownToggle">
+                        <div class="dropdown-content" id="userDropdown">
+                            <a href="#"><i class='bx bxs-user-account'></i> Account</a>
+                            <a href="/index.html" class="logout-link"><i class='bx bx-log-out'></i> Logout</a>
+                        </div>
+                    </div>
+                </li>
             </ul>
         </nav>
     </header>
@@ -41,7 +43,7 @@
         <nav class="sidebar-nav">
             <ul class="nav-list primary-nav">
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="#" class="nav-link" data-section="dashboard">
                         <span class="material-symbols-rounded">space_dashboard</span>
                         <span class="nav-label">Dashboard</span>
                     </a>
@@ -50,44 +52,42 @@
                     </ul>
                 </li>
                 <li class="nav-item dropdown-container">
-                    <a href="#" class="nav-link dropdown-toggle">
+                    <a href="#" class="nav-link dropdown-toggle" data-section="grades">
                         <span class="material-symbols-rounded">grade</span>
                         <span class="nav-label">Grades</span>
                         <span class="dropdown-icon material-symbols-rounded">keyboard_arrow_down</span>
                     </a>
                     <ul class="dropdown-menu">
                         <li class="nav-item"><a class="nav-link dropdown-title">Grades</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link dropdown-link">Current Academic Performance</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link dropdown-link">Past Grades</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link dropdown-link" data-section="currentGrades">Current Academic Performance</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link dropdown-link" data-section="pastGrades">Past Grades</a></li>
                     </ul>
-                    
                 </li>
-              
                 <li class="nav-item dropdown-container">
-                    <a href="#" class="nav-link dropdown-toggle">
+                    <a href="#" class="nav-link dropdown-toggle" data-section="curriculum">
                         <span class="material-symbols-rounded">book</span>
                         <span class="nav-label">Curriculum</span>
                         <span class="dropdown-icon material-symbols-rounded">keyboard_arrow_down</span>
                     </a>
                     <ul class="dropdown-menu">
                         <li class="nav-item"><a class="nav-link dropdown-title">Curriculum</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link dropdown-link">College Of Computer Studies</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link dropdown-link" data-section="computerStudies">College Of Computer Studies</a></li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown-container">
-                    <a href="#" class="nav-link dropdown-toggle">
+                    <a href="#" class="nav-link dropdown-toggle" data-section="clearance">
                         <span class="material-symbols-rounded">assignment_turned_in</span>
                         <span class="nav-label">Clearance</span>
                         <span class="dropdown-icon material-symbols-rounded">keyboard_arrow_down</span>
                     </a>
                     <ul class="dropdown-menu">
                         <li class="nav-item"><a class="nav-link dropdown-title">Clearance</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link dropdown-link">Accounting</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link dropdown-link">Documents</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link dropdown-link" data-section="accountingClearance">Accounting</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link dropdown-link" data-section="documentClearance">Documents</a></li>
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="#" class="nav-link" data-section="schedule">
                         <span class="material-symbols-rounded">schedule</span>
                         <span class="nav-label">Class Schedule</span>
                     </a>
@@ -96,7 +96,7 @@
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="#" class="nav-link" data-section="settings">
                         <span class="material-symbols-rounded">settings_suggest</span>
                         <span class="nav-label">Settings</span>
                     </a>
@@ -107,7 +107,7 @@
             </ul>
             <ul class="nav-list secondary-nav">
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="#" class="nav-link" data-section="support">
                         <span class="material-symbols-rounded">support_agent</span>
                         <span class="nav-label">Support</span>
                     </a>
@@ -118,6 +118,201 @@
             </ul>
         </nav>
     </aside>
+    <div class="wrapper">
+        <div class="content-section active" id="dashboard">
+            <div class="box1">
+                <p><strong>March 19, 2025</strong></p>
+                <h1>Welcome Back, John Rey!</h1>
+                <h3>Always updated in your portal.</h3>
+            </div>
+            <div class=""></div>
+            <div class="announce-news">
+                <div class="announcement">
+                    <h1>Announcement</h1>
+                </div>
+                <div class="news">
+                    <h1>News</h1>
+                </div>
+
+            </div>
+
+                    <div class="portfolio-container">
+                        <div class="portfolio-box">
+                            <img src="/images/profile.png" alt="">
+                            <div class="portfolio-layer">
+                                <h4>Web Design</h4>
+                                <p>I'm eager to learn and explore the latest technologies in networking and databases.</p>
+                                <a href="#"><i class='bx bx-link-external'></i></a>
+                            </div>
+                        </div>
+                        <div class="portfolio-box">
+                            <img src="/images/profile1.png" alt="">
+                            <div class="portfolio-layer">
+                                <h4>Web Design</h4>
+                                <p>I'm eager to learn and explore the latest technologies in networking and databases.</p>
+                                <a href="#"><i class='bx bx-link-external'></i></a>
+                            </div>
+                        </div>
+                        <div class="slider-wrapper">
+                            <div class="slider">
+                                <img id="slide-1"src="/images/slider1.jpeg" alt="">
+                                <img id="slide-2"src="/images/profilepic.jpg" alt="">
+                                <img id="slide-3"src="/images/profile1.png" alt="">
+                            </div>
+                            <div class="slider-nav">
+                                <a href="#slide-1"></a>
+                                <a href="#slide-2"></a>
+                                <a href="#slide-3"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="event">
+                        <h1>Event</h1>
+                    </div>
+                    <div class="portfolio-container">
+                        <div class="portfolio-box">
+                            <img src="/images/profile.png" alt="">
+                            <div class="portfolio-layer">
+                                <h4>Web Design</h4>
+                                <p>I'm eager to learn and explore the latest technologies in networking and databases.</p>
+                                <a href="#"><i class='bx bx-link-external'></i></a>
+                            </div>
+                        </div>
+                        <div class="portfolio-box">
+                            <img src="/images/profile1.png" alt="">
+                            <div class="portfolio-layer">
+                                <h4>Web Design</h4>
+                                <p>I'm eager to learn and explore the latest technologies in networking and databases.</p>
+                                <a href="#"><i class='bx bx-link-external'></i></a>
+                            </div>
+                        </div>
+                        <div class="portfolio-box">
+                            <img src="/images/profile1.png" alt="">
+                            <div class="portfolio-layer">
+                                <h4>Web Design</h4>
+                                <p>I'm eager to learn and explore the latest technologies in networking and databases.</p>
+                                <a href="#"><i class='bx bx-link-external'></i></a>
+                            </div>
+                        </div>
+
+                    </div>
+            </div>
+        </div>
+        <div class="content-section" id="grades">
+            <div class="box">
+                <div class="image-wrapper">
+                    <p class="width-text"></p>
+                    <img src="/images/profile.png" alt="Picture">
+                </div>
+                <h2>Grades</h2>
+                <p>View your grades here.</p>
+            </div>
+        </div>
+        <div class="content-section" id="currentGrades">
+            <div class="box">
+                <div class="image-wrapper">
+                    <p class="width-text"></p>
+                    <img src="/images/profile.png" alt="Picture">
+                </div>
+                <h2>Current Grades</h2>
+                <p>Your current academic performance.</p>
+            </div>
+        </div>
+        <div class="content-section" id="pastGrades">
+            <div class="box">
+                <div class="image-wrapper">
+                    <p class="width-text"></p>
+                    <img src="/images/profile.png" alt="Picture">
+                </div>
+                <h2>Past Grades</h2>
+                <p>Your past academic grades.</p>
+            </div>
+        </div>
+        <div class="content-section" id="curriculum">
+            <div class="box">
+                <div class="image-wrapper">
+                    <p class="width-text"></p>
+                    <img src="/images/profile.png" alt="Picture">
+                </div>
+                <h2>Curriculum</h2>
+                <p>Curriculum information.</p>
+            </div>
+        </div>
+        <div class="content-section" id="computerStudies">
+            <div class="box">
+                <div class="image-wrapper">
+                    <p class="width-text"></p>
+                    <img src="/images/profile.png" alt="Picture">
+                </div>
+                <h2>College of Computer Studies</h2>
+                <p>Curriculum details for the College of Computer Studies.</p>
+            </div>
+        </div>
+        <div class="content-section" id="clearance">
+            <div class="box">
+                <div class="image-wrapper">
+                    <p class="width-text"></p>
+                    <img src="/images/profile.png" alt="Picture">
+                </div>
+                <h2>Clearance</h2>
+                <p>Clearance information.</p>
+            </div>
+        </div>
+         <div class="content-section" id="accountingClearance">
+            <div class="box">
+                <div class="image-wrapper">
+                    <p class="width-text"></p>
+                    <img src="/images/profile.png" alt="Picture">
+                </div>
+                <h2>Accounting Clearance</h2>
+                <p>Accounting clearance details.</p>
+            </div>
+        </div>
+         <div class="content-section" id="documentClearance">
+            <div class="box">
+                <div class="image-wrapper">
+                    <p class="width-text"></p>
+                    <img src="/images/profile.png" alt="Picture">
+                </div>
+                <h2>Document Clearance</h2>
+                <p>Document clearance details.</p>
+            </div>
+        </div>
+        <div class="content-section" id="schedule">
+            <div class="box">
+                <div class="image-wrapper">
+                    <p class="width-text"></p>
+                    <img src="/images/profile.png" alt="Picture">
+                </div>
+                <h2>Class Schedule</h2>
+                <p>Your class schedule.</p>
+            </div>
+        </div>
+        <div class="content-section" id="settings">
+            <div class="box">
+                <div class="image-wrapper">
+                    <p class="width-text"></p>
+                    <img src="/images/profile.png" alt="Picture">
+                </div>
+                <h2>Settings</h2>
+                <p>Your account settings.</p>
+            </div>
+        </div>
+        <div class="content-section" id="support">
+             <div class="box">
+                <div class="image-wrapper">
+                    <p class="width-text"></p>
+                    <img src="/images/profile.png" alt="Picture">
+                </div>
+                <h2>Support</h2>
+                <p>Support information.</p>
+            </div>
+        </div>
+    </div>
+    <footer>
+
+    </footer>
+
     <script src="try.js"></script>
 </body>
 </html>
