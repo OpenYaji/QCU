@@ -494,23 +494,37 @@ body.night-mode .dropdown-menu .nav-item .nav-link{
   transition: background-color 0.3s;
   color: #EEF2FF;
   margin-bottom: 15px;
+  margin-left: 30px;
+  width: 95%;
+
 }
 .announce-news{
   display: flex;
+  width: 95%;
+  margin-left: 30px;
   justify-content: space-between;
   justify-items: center;
   margin-bottom: 15px;
+  border-radius: 1rem;
+  background-color: #9aa0bd;
+  border: 1px solid #ccc;
 }
 .news{
-  margin-right: 10rem;
+  margin-right: 8rem;
 }
 .announcement{
   margin-left: 18rem;
 }
 .event{
+  display: flex;
+  width: 95%;
+  margin-left: 30px;
   justify-content: center;
   justify-items: center;
-  padding-bottom: 2rem;
+  margin-bottom: 15px;
+  border-radius: 1rem;
+  background-color: #9aa0bd;
+  border: 1px solid #ccc;
 }
 
 body.night-mode .box{
@@ -612,6 +626,7 @@ body.night-mode .portfolio h2{
     display: flex;
     transition: box-shadow 0.3s;
     background-color: #242a44;
+    margin-left: 30px;
     }
     
     body.night-mode .portfolio-container .portfolio-box{
@@ -696,6 +711,25 @@ body.night-mode .portfolio h2{
     body.night-mode .portfolio-layer a i{
     color: var(--night-bg);
     }
+.chatbot{
+    position: fixed;
+    left: 300px;
+    bottom: 100px;
+    width: 420px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 0 128px 0 rgba(0, 0, 0, 0.1),
+                0 32px 64px -48px rgba(0, 0, 0, 0.5);
+}
+.chatbot header{
+    background:#242a44;
+    padding: 16px 0;
+    text-align: center;
+}
+.chatbot header h2{
+    color: #F1F3FF;
+    font-size: 1.4rem;
+}
     
     /* Responsive media query code for small screens */
     @media (max-width: 768px) {
