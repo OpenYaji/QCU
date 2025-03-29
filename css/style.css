@@ -15,7 +15,7 @@
     --bg-color: #f0f0f5; 
     --second-bg-color: #ffffff; 
     --text-color: #212529; 
-    --main-color: #d9534f; 
+    --main-color: #05196e; 
 }
 html{
     font-size: 62.5%;
@@ -45,27 +45,29 @@ section{
     border-bottom: .1rem solid rgba(0, 0, 0, .2) ;
 }
 .header .logo img {
-    width: 20px;
+    width: 25px;
     height: auto; 
-    height: 20px; 
+    height: 25px; 
     width: auto; 
   }
 .logo{
-    font-size: 2.5rem;
+    font-size: 3.5rem;
     color: var(--text-color);
     font-weight: 600;
     cursor: default;
 }
 .navbar a {
     font-size: 1.7rem;
+    font-weight: 100%;
     color: var(--text-color);
-    margin-left: 4rem;
+    margin-left: 3rem;
     transition: .3s;
 }
 .navbar a:hover,
 .navbar a.active{
     color: var(--main-color);
 }
+
 #menu-icon{
     font-size: 3.6rem;
     color:var(--text-color);
@@ -419,9 +421,6 @@ span{
     html{
         font-size: 50%;
     }
-    .contact form .input-box input{
-        width: 100%;
-    }
 }
 @media(max-width: 365px){
     .home-img img{
@@ -491,7 +490,7 @@ span{
     width: 100%;
     height: 40px;
     border-radius: 50px;
-    background-image: linear-gradient(135deg, #1310ec 0%,var(--main-color) 70%);
+    background-image: linear-gradient(135deg, #ec1710 0%,var(--main-color) 70%);
     outline: none;
     cursor: pointer;
     border: none;
@@ -625,7 +624,7 @@ span{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #4CAF50;
+    background-color: #304499;
     color: white;
     padding: 20px;
     border-radius: 5px;
