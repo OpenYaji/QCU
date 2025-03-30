@@ -23,7 +23,7 @@
                         <h3>Calipes, John Rey</h3>
                         <img src="/images/profilepic.jpg" alt="Profile Picture" class="user-profile-image" id="userDropdownToggle">
                         <div class="dropdown-content" id="userDropdown">
-                            <a href="#"><i class='bx bxs-user-account'></i> Account</a>
+                            <a href="/account.html"><i class='bx bxs-user-account'></i> Account</a>
                             <a href="/index.html" class="logout-link"><i class='bx bx-log-out'></i> Logout</a>
                         </div>
                     </div>
@@ -31,7 +31,7 @@
             </ul>
         </nav>
     </header>
-    <aside class="sidebar">
+    <aside class="sidebar" data-collapsed="false">
         <header class="sidebar-header">
             <a href="#" class="header-logo">
                 <img src="/images/profile.png" alt="Quezon City University" />
@@ -120,113 +120,278 @@
     </aside>
     <div class="wrapper">
         <div class="content-section active" id="dashboard">
-            <div class="box1">
-                <p><strong>March 19, 2025</strong></p>
-                <h1>Welcome Back, John Rey!</h1>
-                <h3>Always updated in your portal.</h3>
-            </div>
-            <div class=""></div>
-                <div class="announce-news">
-                    <div class="announcement">
-                        <h1>Announcement</h1>
-                    </div>
-                    <div class="news">
-                        <h1>News</h1>
-                    </div>
-
+            <!-- Welcome Section -->
+            <div class="dashboard-header">
+                <div class="welcome-box">
+                    <p class="date"><strong id="current-date"></strong></p>
+                    <script>
+                        const currentDateElement = document.getElementById('current-date');
+                        const currentDate = new Date().toLocaleDateString('en-US', {
+                            year: 'numeric',
+                            month: 'long',
+                            day: 'numeric'
+                        });
+                        currentDateElement.textContent = currentDate;
+                    </script>
+                    <h1>Welcome Back, John Rey!</h1>
+                    <h3>Always updated in your portal.</h3>
                 </div>
-                    <div class="portfolio-container">
-                        <div class="portfolio-box">
-                            <img src="/images/announce1.jpg" alt="">
-                            <div class="portfolio-layer">
+                
+                <!-- Stats Cards -->
+                <div class="stats-container">
+                    <div class="stat-card">
+                        <i class='bx bx-book'></i>
+                        <div class="stat-info">
+                            <h3>Subjects</h3>
+                            <p>8 Active</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class='bx bx-calendar'></i>
+                        <div class="stat-info">
+                            <h3>Events</h3>
+                            <p>2 Upcoming</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class='bx bx-bell'></i>
+                        <div class="stat-info">
+                            <h3>Notifications</h3>
+                            <p>5 New</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Main Dashboard Grid -->
+            <div class="dashboard-grid">
+                <!-- Announcements Section -->
+                <div class="grid-section announcements">
+                    <div class="section-header">
+                        <h2>Announcements</h2>
+                        <a href="#" class="view-all">View All</a>
+                    </div>
+                    <div class="content-cards">
+                        <div class="card">
+                            <img src="/images/announce1.jpg" alt="QCUCAT">
+                            <div class="card-content">
                                 <h4>QCUCAT</h4>
-                                <p>I'm eager to learn and explore the latest technologies in networking and databases.</p>
+                                <p>Latest updates on college admission test.</p>
                                 <a href="#"><i class='bx bx-link-external'></i></a>
                             </div>
                         </div>
-                        <div class="portfolio-box">
-                            <img src="/images/announce2.jpg" alt="">
-                            <div class="portfolio-layer">
+                        <div class="card">
+                            <img src="/images/announcement5.jpg" alt="Web Design">
+                            <div class="card-content">
                                 <h4>Web Design</h4>
-                                <p>I'm eager to learn and explore the latest technologies in networking and databases.</p>
+                                <p>New web design workshop schedule.</p>
                                 <a href="#"><i class='bx bx-link-external'></i></a>
-                            </div>
-                        </div>
-                        <div class="slider-wrapper">
-                            <div class="slider">
-                                <img id="slide-1"src="/images/slider1.jpeg" alt="">
-                                <img id="slide-2"src="/images/profilepic.jpg" alt="">
-                                <img id="slide-3"src="/images/news2.jpg" alt="">
-                            </div>
-                            <div class="slider-nav">
-                                <a href="#slide-1"></a>
-                                <a href="#slide-2"></a>
-                                <a href="#slide-3"></a>
                             </div>
                         </div>
                     </div>
-                    <div class="event">
-                        <h1>Event</h1>
+                </div>
+                <div class="grid-section events">
+                    <div class="section-header">
+                        <h2>Upcoming Events</h2>
+                        <a href="#" class="view-all">View All</a>
                     </div>
-                    <div class="portfolio-container">
-                        <div class="portfolio-box">
-                            <img src="/images/event1.jpg" alt="">
-                            <div class="portfolio-layer">
-                                <h4>Web Design</h4>
-                                <p>I'm eager to learn and explore the latest technologies in networking and databases.</p>
+                    <div class="content-cards">
+                        <div class="card">
+                            <img src="/images/event1.jpg" alt="Event 1">
+                            <div class="card-content">
+                                <h4>Campus Event</h4>
+                                <p>Join us for the upcoming campus event.</p>
                                 <a href="#"><i class='bx bx-link-external'></i></a>
                             </div>
                         </div>
-                        <div class="portfolio-box">
-                            <img src="/images/event3.jpg" alt="">
-                            <div class="portfolio-layer">
-                                <h4>Web Design</h4>
-                                <p>I'm eager to learn and explore the latest technologies in networking and databases.</p>
+                        <div class="card">
+                            <img src="/images/event3.jpg" alt="Event 2">
+                            <div class="card-content">
+                                <h4>Workshop</h4>
+                                <p>Technical skills workshop this weekend.</p>
                                 <a href="#"><i class='bx bx-link-external'></i></a>
                             </div>
                         </div>
+                    </div>
+                </div>        
+                <!-- News Slider Section -->
+                <div class="grid-section news">
+                    <div class="section-header">
+                        <h2>Latest News</h2>
+                    </div>
+                    <div class="slider-wrapper">
+                        <div class="slider">
+                            <img id="slide-1" src="/images/slider1.jpeg" alt="News 1">
+                            <img id="slide-2" src="/images/news5.jpg" alt="News 2">
+                            <img id="slide-3" src="/images/news2.jpg" alt="News 3">
+                        </div>
+                        <div class="slider-nav">
+                            <a href="#slide-1"></a>
+                            <a href="#slide-2"></a>
+                            <a href="#slide-3"></a>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Events Section -->
 
-                    </div>
             </div>
         </div>
         <div class="content-section" id="grades">
-            <div class="box">
-                <div class="image-wrapper">
-                    <p class="width-text"></p>
-                    <img src="/images/profile.png" alt="Picture">
+            <div class="grades-container">
+                <!-- Grade Summary Card -->
+                <div class="grade-summary-card">
+                    <div class="summary-header">
+                        <h2>Grade Summary</h2>
+                        <p>Academic Year 2024-2025</p>
+                    </div>
+                    <div class="summary-stats">
+                        <div class="stat-item">
+                            <h3>GWA</h3>
+                            <p>1.75</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>Units</h3>
+                            <p>21</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>Standing</h3>
+                            <p>Good</p>
+                        </div>
+                    </div>
                 </div>
-                <h2>Grades</h2>
-                <p>View your grades here.</p>
+        
+                <!-- Grade Options Grid -->
+                <div class="grades-grid">
+                    <a href="#" class="grade-option" data-section="currentGrades">
+                        <i class='bx bx-chart'></i>
+                        <h3>Current Grades</h3>
+                        <p>View your current semester grades</p>
+                    </a>
+                    <a href="#" class="grade-option" data-section="pastGrades">
+                        <i class='bx bx-history'></i>
+                        <h3>Grade History</h3>
+                        <p>View your previous semester grades</p>
+                    </a>
+                    <a href="#" class="grade-option">
+                        <i class='bx bx-download'></i>
+                        <h3>Download Report</h3>
+                        <p>Get your grade reports</p>
+                    </a>
+                </div>
+        
+                <!-- Recent Performance -->
+                <div class="recent-performance">
+                    <h3>Recent Performance</h3>
+                    <div class="performance-chart">
+                        <!-- Add your chart here -->
+                        <canvas id="gradeChart"></canvas>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="content-section" id="currentGrades">
-            <div class="box-cgp">
-                <section class="academic-performance">
-                    <h2>CURRENT ACADEMIC PERFORMANCE</h2>
+            <div class="grades-wrapper">
+                <div class="grades-header">
+                    <h2>Current Academic Performance</h2>
+                    <p style="font-size: 1.5em;">2nd Semester, AY 2024-2025</p>
+                </div>
+                
+                <div class="grades-controls">
                     <div class="search-bar">
-                        <input type="text" placeholder="Search...">
-                        <button>Filter <i class='bx bx-slider-alt'></i></button>
+                        <i class='bx bx-search'></i>
+                        <input type="text" id="gradeSearch" placeholder="Search subjects...">
                     </div>
-                    <table>
+                    <div class="filter-controls">
+                        <select id="subjectFilter" class="semester-select">
+                            <option value="all">All Subjects</option>
+                            <option value="major">Major Subjects</option>
+                            <option value="minor">Minor Subjects</option>
+                        </select>
+                        <button class="filter-btn" onclick="filterSubjects()">
+                            <i class='bx bx-filter-alt'></i>
+                            Filter
+                        </button>
+                    </div>
+                </div>
+        
+                <div class="grades-table-container">
+                    <table class="grades-table" id="currentGradesTable">
                         <thead>
                             <tr>
-                                <th>SubCode</th>
-                                <th>Subject</th>
+                                <th>Subject Code</th>
+                                <th>Description</th>
+                                <th>Units</th>
                                 <th>Midterm</th>
                                 <th>Finals</th>
+                                <th>Final Grade</th>
                                 <th>Remarks</th>
                                 <th>Instructor</th>
                             </tr>
                         </thead>
-                        <tbody id="table-body">
-                            </tbody>
+                        <tbody id="gradesTableBody">
+                            <!-- JavaScript will populate this -->
+                        </tbody>
                     </table>
-                </section>
+                </div>
             </div>
         </div>
+        
         <div class="content-section" id="pastGrades">
-                <h2>Past Grades</h2>
-                <p>Your past academic grades.</p>
+            <div class="grades-wrapper">
+                <!-- Header Section -->
+                <div class="grades-header">
+                    <div class="header-main">
+                        <h2>Grade History</h2>
+                        <div class="filter-controls">
+                            <select id="grade-year" class="grade-select" onchange="filterGrades()">
+                                <option value="1st">1st Year</option>
+                                <option value="2nd">2nd Year</option>
+                                <option value="3rd">3rd Year</option>
+                                <option value="4th">4th Year</option>
+                            </select>
+                            <select id="grade-sem" class="grade-select" onchange="filterGrades()">
+                                <option value="1st">1st Semester</option>
+                                <option value="2nd">2nd Semester</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Summary Cards -->
+                <div class="semester-summary">
+                    <div class="summary-card">
+                        <h4>General Weighted Average</h4>
+                        <p id="gwa-display" class="gwa">1.75</p>
+                    </div>
+                    <div class="summary-card">
+                        <h4>Units Earned</h4>
+                        <p id="units-display">21</p>
+                    </div>
+                    <div class="summary-card">
+                        <h4>Academic Standing</h4>
+                        <p id="standing-display">Good</p>
+                    </div>
+                </div>
+        
+                <!-- Grades Table -->
+                <div class="grades-table-container">
+                    <table class="grades-table">
+                        <thead>
+                            <tr>
+                                <th>Subject Code</th>
+                                <th>Description</th>
+                                <th>Units</th>
+                                <th>Grade</th>
+                                <th>Remarks</th>
+                            </tr>
+                        </thead>
+                        <tbody id="past-grades-table">
+                            <!-- JavaScript will populate this -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
         <div class="content-section" id="curriculum">
             <div class="box">

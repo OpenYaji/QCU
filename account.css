@@ -1,0 +1,178 @@
+/* Importing Google Fonts - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+:root {
+    --second-bg-color: #f0f0f0; /* Light gray background */
+    --bg-color: #333; /* Dark background for shadows */
+    --main-color: #05196e; /* Blue main color */
+    --text-color: #fff; /* White text color */
+
+    /* Night mode variables */
+    --night-bg: #333;
+    --night-text: #fff;
+    --night-second-bg: #222;
+    --night-header-bg: #222;
+    --night-icon-color: #fff;
+    --night-header-text: #fff;
+    --night-gradient-start: black; /* or #000 */
+    --night-gradient-end: black;   /* or #000 */
+}
+
+body {
+    min-height: 55vh;
+    background: #CBD4FF;
+    margin-top: 90px;
+    margin-left: 80px;
+    margin-bottom: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s, color 0.3s; /* Smooth transitions */
+}
+
+body.night-mode {
+  background: linear-gradient(var(--night-gradient-start), var(--night-gradient-end));
+  color: var(--night-text);
+}
+
+body.night-mode .portfolio {
+    background-color: var(--night-second-bg);
+}
+
+body.night-mode .box-dashboard {
+    background-color: var(--night-second-bg);
+    color: var(--night-text);
+}
+
+body.night-mode .box-dashboard h2,
+body.night-mode .box-dashboard p {
+    color: var(--night-text);
+}
+
+.header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: #EEF2FF;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    z-index: 1;
+    padding: .8rem;
+    transition: background-color 0.3s; /* Smooth transitions */
+}
+
+body.night-mode .header{
+    background-color: var(--night-header-bg);
+}
+
+
+
+.header h3 {
+  margin-right: 15px;
+  font-size: 15px;
+  font-weight: 100;
+  transition: color 0.3s;
+}
+    .header h3:hover{
+        box-shadow: 0 2px #000; /* 2px offset in x and y direction*/
+    }
+
+body.night-mode .header h1{
+    color: var(--night-header-text);
+}
+
+.user-icon-container {
+    display: flex;
+    align-items: center;
+}
+
+.header-icons {
+    font-size: 40px;
+    color: #242a44;
+    margin-right: 20px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+body.night-mode .header-icons {
+    color: var(--night-icon-color);
+}
+
+.dropdown {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #05196e;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  right: 0;
+  border-radius: 10px;
+  top: 100%; /* Position the dropdown below the image */
+  margin-top: 5px; /* Add some space between the image and dropdown */
+}
+
+.user-profile-container {
+    position: relative;
+    display: flex;
+}
+
+.user-profile-image {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    cursor: pointer;
+    object-fit: cover;
+    margin-top: 0.5rem;
+    margin-right: 1.5rem;
+}
+
+.user-profile-image:hover {
+    box-shadow: 0px 5px 30px 0px rgba(76, 74, 78, 0.925);
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #05196e;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    right: 0;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+}
+
+body.night-mode .dropdown-content{
+    background-color: var(--night-second-bg);
+}
+
+.dropdown-content a {
+    color: #F1F3FF;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.dropdown-content a:hover {
+    background-color: white;
+    color: #05196e;
+}
+
+.user-profile-container:hover .dropdown-content {
+    display: block;
+}

@@ -1,11 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Account</title>
+    <link rel="stylesheet" href="account.css" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="icon" href="images/profile1.png">
 </head>
 <body>
-    
+    <header class="header">
+        <nav class="navbar">
+            <img src="/images/profile.png" alt="QCU Logo" class="qcu-logo">
+            <ul class="dropdown">
+                <li>
+                    <div class="user-icon-container">
+                        <i class='bx bx-toggle-right header-icons toggle-night-mode'></i>
+                        <i class='bx bx-bell header-icons notification'></i>
+                        <h3>Calipes, John Rey</h3>
+                        <img src="/images/profilepic.jpg" alt="Profile Picture" class="user-profile-image" id="userDropdownToggle">
+                        <div class="dropdown-content" id="userDropdown">
+                            <a href="/account.html"><i class='bx bxs-user-account'></i> Account</a>
+                            <a href="/index.html" class="logout-link"><i class='bx bx-log-out'></i> Logout</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
 </body>
 </html>
