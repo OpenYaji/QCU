@@ -59,27 +59,30 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 document.addEventListener('DOMContentLoaded', function() {
-  const navLinks = document.querySelectorAll('.nav-link');
-  const contentSections = document.querySelectorAll('.content-section');
+    const navLinks = document.querySelectorAll('.nav-link');
+    const gradeOptions = document.querySelectorAll('.grade-option');
+    const contentSections = document.querySelectorAll('.content-section');
 
-  navLinks.forEach(link => {
-      link.addEventListener('click', function(event) {
-          event.preventDefault();
+    const allLinks = [...navLinks, ...gradeOptions]; // Combine both sets of links
 
-          const sectionId = this.getAttribute('data-section');
+    allLinks.forEach(link => {
+        link.addEventListener('click', function(event) {
+            event.preventDefault();
 
-          if (sectionId) {
-              contentSections.forEach(section => {
-                  section.classList.remove('active');
-              });
+            const sectionId = this.getAttribute('data-section');
 
-              const targetSection = document.getElementById(sectionId);
-              if (targetSection) {
-                  targetSection.classList.add('active');
-              }
-          }
-      });
-  });
+            if (sectionId) {
+                contentSections.forEach(section => {
+                    section.classList.remove('active');
+                });
+
+                const targetSection = document.getElementById(sectionId);
+                if (targetSection) {
+                    targetSection.classList.add('active');
+                }
+            }
+        });
+    });
 });
 const toggleNightMode = document.querySelector('.toggle-night-mode');
 const body = document.body;
@@ -180,7 +183,7 @@ const currentGradesData = [
         finals: 1.25,
         finalGrade: 1.38,
         type: "major",
-        instructor: "Dr. Santos"
+        instructor: "Prof. Sambajon"
     },
     {
         code: "CSE202",
@@ -190,7 +193,7 @@ const currentGradesData = [
         finals: 1.50,
         finalGrade: 1.63,
         type: "major",
-        instructor: "Prof. Garcia"
+        instructor: "Prof. Escultura"
     },
     {
         code: "CSE303",
@@ -200,7 +203,7 @@ const currentGradesData = [
         finals: 2.00,
         finalGrade: 1.88,
         type: "major",
-        instructor: "Ms. Cruz"
+        instructor: "Prof. Molinar"
     },
     {
         code: "GEN101",
@@ -210,7 +213,7 @@ const currentGradesData = [
         finals: 1.75,
         finalGrade: 1.63,
         type: "minor",
-        instructor: "Prof. Reyes"
+        instructor: "Prof. Randy"
     },
     // Add more subjects as needed
 ];
@@ -288,367 +291,373 @@ document.addEventListener('DOMContentLoaded', () => {
     const searchInput = document.getElementById('gradeSearch');
     searchInput.addEventListener('input', searchGrades);
 });
-    const pastGradesData = {
-        "1st-1st": [
-            {
-                code: "ART 101",
-                description: "Art Appreciation",
-                units: 3,
-                grade: 1.50,
-                remarks: "Passed"
-            },
-            {
-                code: "DSA 101",
-                description: "Data Structures and Algorithms",
-                units: 3,
-                grade: 1.50,
-                remarks: "Passed"
-            },
-            {
-                code: "PE 101",
-                description: "Individual and Dual Sports",
-                units: 2,
-                grade: 1.25,
-                remarks: "Passed"
-            },
-            {
-                code: "IM 101",
-                description: "Information Management",
-                units: 3,
-                grade: 1.75,
-                remarks: "Passed"
-            },
-            {
-                code: "NET 102",
-                description: "Networking 2",
-                units: 3,
-                grade: 1.75,
-                remarks: "Passed"
-            },
-            {
-                code: "OOP 101",
-                description: "Object-Oriented Programming",
-                units: 3,
-                grade: 1.75,
-                remarks: "Passed"
-            },
-            {
-                code: "SAD 101",
-                description: "Systems Analysis and Design",
-                units: 3,
-                grade: 1.75,
-                remarks: "Passed"
-            }
-        ],
-        "1st-2nd": [
-            {
-                code: "STS 101",
-                description: "Science, Technology and Society",
-                units: 3,
-                grade: null,
-                remarks: "In Progress"
-            },
-            {
-                code: "PC 101",
-                description: "Purposive Communication",
-                units: 3,
-                grade: null,
-                remarks: "In Progress"
-            },
-            {
-                code: "PPC 101",
-                description: "Philippine Popular Culture",
-                units: 3,
-                grade: null,
-                remarks: "In Progress"
-            },
-            {
-                code: "IP 101",
-                description: "Intermediate Programming",
-                units: 3,
-                grade: null,
-                remarks: "In Progress"
-            },
-            {
-                code: "PT 101",
-                description: "Platform Technologies",
-                units: 3,
-                grade: null,
-                remarks: "In Progress"
-            },
-            {
-                code: "NET 101",
-                description: "Networking 1",
-                units: 3,
-                grade: null,
-                remarks: "In Progress"
-            },
-            {
-                code: "RA 101",
-                description: "Rhythmic Activities",
-                units: 2,
-                grade: null,
-                remarks: "In Progress"
-            },
-            {
-                code: "NSTP 102",
-                description: "National Service Training Program 2",
-                units: 3,
-                grade: null,
-                remarks: "In Progress"
-            }
-        ],
-        "2nd-1st": [
-            {
-                code: "ART 101",
-                description: "Art Appreciation",
-                units: 3,
-                grade: 1.25,
-                remarks: "Passed"
-            },
-            {
-                code: "SAD 101",
-                description: "Systems Analysis and Design",
-                units: 3,
-                grade: 1.75,
-                remarks: "Passed"
-            },
-            {
-                code: "DSA 101",
-                description: "Data Structures and Algorithms",
-                units: 3,
-                grade: 1.25,
-                remarks: "Passed"
-            },
-            {
-                code: "IM 101",
-                description: "Information Management",
-                units: 3,
-                grade: 1.5,
-                remarks: "Passed"
-            },
-            {
-                code: "OOP 101",
-                description: "Object-Oriented Programming",
-                units: 3,
-                grade: 1.25,
-                remarks: "Passed"
-            },
-            {
-                code: "NET 102",
-                description: "Networking 2",
-                units: 3,
-                grade: 1.75,
-                remarks: "Passed"
-            },
-            {
-                code: "PE 101",
-                description: "Individual and Dual Sports",
-                units: 2,
-                grade: 1.25,
-                remarks: "Passed"
-            }
-        ],
-        "2nd-2nd": [
-            {
-                code: "GEC 201",
-                description: "Understanding the Self",
-                units: 3,
-                grade: null,
-                remarks: "In Progress"
-            },
-            {
-                code: "GEC 202",
-                description: "Readings in Philippine History",
-                units: 3,
-                grade: null,
-                remarks: "In Progress"
-            },
-            {
-                code: "HCI 201",
-                description: "Introduction to Human Computer Interaction",
-                units: 3,
-                grade: null,
-                remarks: "In Progress"
-            },
-            {
-                code: "SE 201",
-                description: "Software Engineering",
-                units: 3,
-                grade: null,
-                remarks: "In Progress"
-            },
-            {
-                code: "IPT 201",
-                description: "Integrative Programming and Technologies 1",
-                units: 3,
-                grade: null,
-                remarks: "In Progress"
-            },
-            {
-                code: "ADS 201",
-                description: "Advanced Database Systems",
-                units: 3,
-                grade: null,
-                remarks: "In Progress"
-            },
-            {
-                code: "TS 201",
-                description: "Team Sports",
-                units: 2,
-                grade: null,
-                remarks: "In Progress"
-            }
-        ],
-        "3rd-1st": [
-            {
-                code: "TCW 301",
-                description: "The Contemporary World",
-                units: 3,
-                grade: null,
-                remarks: "Not Taken"
-            },
-            {
-                code: "LWR 301",
-                description: "The Life and Works of Rizal",
-                units: 3,
-                grade: null,
-                remarks: "Not Taken"
-            },
-            {
-                code: "DM 301",
-                description: "Discrete Mathematics",
-                units: 3,
-                grade: null,
-                remarks: "Not Taken"
-            },
-            {
-                code: "SPI 301",
-                description: "Social Professional Issues 1",
-                units: 3,
-                grade: null,
-                remarks: "Not Taken"
-            },
-            {
-                code: "AO 301",
-                description: "Architecture and Organization",
-                units: 3,
-                grade: null,
-                remarks: "Not Taken"
-            },
-            {
-                code: "IPT 302",
-                description: "Integrative Programming and Technologies 2",
-                units: 3,
-                grade: null,
-                remarks: "Not Taken"
-            },
-            {
-                code: "SIA 301",
-                description: "Systems Integration and Architecture 1",
-                units: 3,
-                grade: null,
-                remarks: "Not Taken"
-            }
-        ],
-        "3rd-2nd": [
-            {
-                code: "ETH 301",
-                description: "Ethics",
-                units: 3,
-                grade: null,
-                remarks: "Not Taken"
-            },
-            {
-                code: "AC 301",
-                description: "Algorithms and Complexity",
-                units: 3,
-                grade: null,
-                remarks: "Not Taken"
-            },
-            {
-                code: "QM 301",
-                description: "Quantitative Methods",
-                units: 3,
-                grade: null,
-                remarks: "Not Taken"
-            },
-            {
-                code: "ADET 301",
-                description: "Application Development and Emerging Technologies",
-                units: 3,
-                grade: null,
-                remarks: "Not Taken"
-            },
-            {
-                code: "FIAS 301",
-                description: "Fundamental of Information Assurance and Security 1",
-                units: 3,
-                grade: null,
-                remarks: "Not Taken"
-            },
-            {
-                code: "SIA 302",
-                description: "Systems Integration and Architecture 2",
-                units: 3,
-                grade: null,
-                remarks: "Not Taken"
-            }
-        ],
-        "4th-1st": [
-            {
-                code: "CPR 401",
-                description: "Capstone Project and Research 1",
-                units: 3,
-                grade: null,
-                remarks: "Not Taken"
-            },
-            {
-                code: "PRAC 401",
-                description: "Practicum 1",
-                units: 3,
-                grade: null,
-                remarks: "Not Taken"
-            },
-            {
-                code: "ATFL 401",
-                description: "Automata Theory and Formal Language",
-                units: 3,
-                grade: null,
-                remarks: "Not Taken"
-            },
-            {
-                code: "IAS 402",
-                description: "Information Assurance and Security 2",
-                units: 3,
-                grade: null,
-                remarks: "Not Taken"
-            }
-        ],
-        "4th-2nd": [
-            {
-                code: "CPR 402",
-                description: "Capstone Project and Research 2",
-                units: 3,
-                grade: null,
-                remarks: "Not Taken"
-            },
-            {
-                code: "PRAC 402",
-                description: "Practicum 2",
-                units: 3,
-                grade: null,
-                remarks: "Not Taken"
-            },
-            {
-                code: "SAM 401",
-                description: "Systems Administration and Maintenance",
-                units: 3,
-                grade: null,
-                remarks: "Not Taken"
-            }
-        ]
-    // Add more semesters here
+const pastGradesData = {
+    "1st-1st": [
+        {
+            code: "MATH 1",
+            description: "Mathematics in the Modern World",
+            units: 3,
+            grade: 2.00,
+            remarks: "Passed"
+        },
+        {
+            code: "GEE 1",
+            description: "Gender and Society",
+            units: 3,
+            grade: 1.75,
+            remarks: "Passed"
+        },
+        {
+            code: "GEE 2",
+            description: "People and the Earth’s Ecosystems",
+            units: 3,
+            grade: 1.50,
+            remarks: "Passed"
+        },
+        {
+            code: "CC101",
+            description: "Introduction to Computing",
+            units: 3,
+            grade: 2.25,
+            remarks: "Passed"
+        },
+        {
+            code: "CC102",
+            description: "Fundamentals of Programming",
+            units: 3,
+            grade: 2.50,
+            remarks: "Passed"
+        },
+        {
+            code: "WS101",
+            description: "Web Systems and Technologies 1 (Electives)",
+            units: 3,
+            grade: 1.75,
+            remarks: "Passed"
+        },
+        {
+            code: "PE 1",
+            description: "Physical Fitness and Wellness",
+            units: 2,
+            grade: 1.25,
+            remarks: "Passed"
+        },
+        {
+            code: "NSTP 1",
+            description: "National Service Training Program 1",
+            units: 3,
+            grade: 1.50,
+            remarks: "Passed"
+        }
+    ],
+    "1st-2nd": [
+        {
+            code: "SCI 1",
+            description: "Science, Technology and Society",
+            units: 3,
+            grade: 1.75,
+            remarks: "Passed"
+        },
+        {
+            code: "ENG 1",
+            description: "Purposive Communication",
+            units: 3,
+            grade: 2.00,
+            remarks: "Passed"
+        },
+        {
+            code: "GEE 3",
+            description: "Philippine Popular Culture",
+            units: 3,
+            grade: 2.25,
+            remarks: "Passed"
+        },
+        {
+            code: "CC103",
+            description: "Intermediate Programming",
+            units: 3,
+            grade: 2.50,
+            remarks: "Passed"
+        },
+        {
+            code: "PT101",
+            description: "Platform Technologies (Electives)",
+            units: 3,
+            grade: 1.50,
+            remarks: "Passed"
+        },
+        {
+            code: "NET101",
+            description: "Networking 1",
+            units: 3,
+            grade: 1.75,
+            remarks: "Passed"
+        },
+        {
+            code: "PE 2",
+            description: "Rhythmic Activities",
+            units: 2,
+            grade: 1.25,
+            remarks: "Passed"
+        },
+        {
+            code: "NSTP 2",
+            description: "National Service Training Program 2",
+            units: 3,
+            grade: 1.50,
+            remarks: "Passed"
+        }
+    ],
+    "2nd-1st": [
+        {
+            code: "HUM 1",
+            description: "Art Appreciation",
+            units: 3,
+            grade: 1.50,
+            remarks: "Passed"
+        },
+        {
+            code: "IS104",
+            description: "Systems Analysis and Design",
+            units: 3,
+            grade: 1.75,
+            remarks: "Passed"
+        },
+        {
+            code: "CC104",
+            description: "Data Structures and Algorithms",
+            units: 3,
+            grade: 1.50,
+            remarks: "Passed"
+        },
+        {
+            code: "CC105",
+            description: "Information Management",
+            units: 3,
+            grade: 1.75,
+            remarks: "Passed"
+        },
+        {
+            code: "PF101",
+            description: "Object-Oriented Programming",
+            units: 3,
+            grade: 1.25,
+            remarks: "Passed"
+        },
+        {
+            code: "NET102",
+            description: "Networking 2",
+            units: 3,
+            grade: 1.75,
+            remarks: "Passed"
+        },
+        {
+            code: "PE 3",
+            description: "Individual and Dual Sports",
+            units: 2,
+            grade: 1.25,
+            remarks: "Passed"
+        }
+    ],
+    "2nd-2nd": [
+        {
+            code: "SOCSCI 1",
+            description: "Understanding the Self",
+            units: 3,
+            grade: null,
+            remarks: "In Progress"
+        },
+        {
+            code: "SOCSCI 2",
+            description: "Readings in Philippine History",
+            units: 3,
+            grade: null,
+            remarks: "In Progress"
+        },
+        {
+            code: "HCI101",
+            description: "Introduction to Human Computer Interaction",
+            units: 3,
+            grade: null,
+            remarks: "In Progress"
+        },
+        {
+            code: "SE101",
+            description: "Software Engineering",
+            units: 3,
+            grade: null,
+            remarks: "In Progress"
+        },
+        {
+            code: "IPT101",
+            description: "Integrative Programming and Technologies 1",
+            units: 3,
+            grade: null,
+            remarks: "In Progress"
+        },
+        {
+            code: "IM101",
+            description: "Advanced Database Systems",
+            units: 3,
+            grade: null,
+            remarks: "In Progress"
+        },
+        {
+            code: "PE 4",
+            description: "Team Sports",
+            units: 2,
+            grade: null,
+            remarks: "In Progress"
+        }
+    ],
+    "3rd-1st": [
+        {
+            code: "SOCSCI 3",
+            description: "The Contemporary World",
+            units: 3,
+            grade: null,
+            remarks: "Not Taken"
+        },
+        {
+            code: "RIZAL",
+            description: "The Life and Works of Rizal",
+            units: 3,
+            grade: null,
+            remarks: "Not Taken"
+        },
+        {
+            code: "MS101",
+            description: "Discrete Mathematics",
+            units: 3,
+            grade: null,
+            remarks: "Not Taken"
+        },
+        {
+            code: "SPI101",
+            description: "Social Professional Issues 1",
+            units: 3,
+            grade: null,
+            remarks: "Not Taken"
+        },
+        {
+            code: "AR101",
+            description: "Architecture and Organization",
+            units: 3,
+            grade: null,
+            remarks: "Not Taken"
+        },
+        {
+            code: "IPT102",
+            description: "Integrative Programming and Technologies 2",
+            units: 3,
+            grade: null,
+            remarks: "Not Taken"
+        },
+        {
+            code: "SIA101",
+            description: "Systems Integration and Architecture 1",
+            units: 3,
+            grade: null,
+            remarks: "Not Taken"
+        }
+    ],
+    "3rd-2nd": [
+        {
+            code: "HUM 2",
+            description: "Ethics",
+            units: 3,
+            grade: null,
+            remarks: "Not Taken"
+        },
+        {
+            code: "AL101",
+            description: "Algorithms and Complexity",
+            units: 3,
+            grade: null,
+            remarks: "Not Taken"
+        },
+        {
+            code: "MS102",
+            description: "Quantitative Methods",
+            units: 3,
+            grade: null,
+            remarks: "Not Taken"
+        },
+        {
+            code: "CC106",
+            description: "Application Development and Emerging Technologies",
+            units: 3,
+            grade: null,
+            remarks: "Not Taken"
+        },
+        {
+            code: "IAS101",
+            description: "Fundamental of Information Assurance and Security 1",
+            units: 3,
+            grade: null,
+            remarks: "Not Taken"
+        },
+        {
+            code: "SIA102",
+            description: "Systems Integration and Architecture 2",
+            units: 3,
+            grade: null,
+            remarks: "Not Taken"
+        }
+    ],
+    "4th-1st": [
+        {
+            code: "CAP101*",
+            description: "Capstone Project and Research 1",
+            units: 3,
+            grade: null,
+            remarks: "Not Taken"
+        },
+        {
+            code: "PRC101*",
+            description: "Practicum 1",
+            units: 3,
+            grade: null,
+            remarks: "Not Taken"
+        },
+        {
+            code: "AL102",
+            description: "Automata Theory and Formal Language",
+            units: 3,
+            grade: null,
+            remarks: "Not Taken"
+        },
+        {
+            code: "IAS102",
+            description: "Information Assurance and Security 2",
+            units: 3,
+            grade: null,
+            remarks: "Not Taken"
+        }
+    ],
+    "4th-2nd": [
+        {
+            code: "CAP102",
+            description: "Capstone Project and Research 2",
+            units: 3,
+            grade: null,
+            remarks: "Not Taken"
+        },
+        {
+            code: "PRC102",
+            description: "Practicum 2",
+            units: 3,
+            grade: null,
+            remarks: "Not Taken"
+        },
+        {
+            code: "SAM101",
+            description: "Systems Administration and Maintenance",
+            units: 3,
+            grade: null,
+            remarks: "Not Taken"
+        }
+    ]
 };
 
 function displayPastGrades(grades) {
@@ -728,4 +737,128 @@ function filterGrades() {
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', () => {
     filterGrades();
+});
+
+const curriculumData = {
+    "1st-1st": [
+        { code: "MATH 1", title: "Mathematics in the Modern World", units: 3, prereq: "None" },
+        { code: "GEE 1", title: "Gender and Society", units: 3, prereq: "None" },
+        { code: "GEE 2", title: "People and the Earth’s Ecosystems", units: 3, prereq: "None" },
+        { code: "CC101", title: "Introduction to Computing", units: 3, prereq: "None" },
+        { code: "CC102", title: "Fundamentals of Programming", units: 3, prereq: "None" },
+        { code: "WS101", title: "Web Systems and Technologies 1 (Electives)", units: 3, prereq: "None" },
+        { code: "PE 1", title: "Physical Fitness and Wellness", units: 2, prereq: "None" },
+        { code: "NSTP 1", title: "National Service Training Program 1", units: 3, prereq: "None" }
+    ],
+    "1st-2nd": [
+        { code: "SCI 1", title: "Science, Technology and Society", units: 3, prereq: "None" },
+        { code: "ENG 1", title: "Purposive Communication", units: 3, prereq: "None" },
+        { code: "GEE 3", title: "Philippine Popular Culture", units: 3, prereq: "None" },
+        { code: "CC103", title: "Intermediate Programming", units: 3, prereq: "CC101, CC102" },
+        { code: "PT101", title: "Platform Technologies (Electives)", units: 3, prereq: "CC101, CC102" },
+        { code: "NET101", title: "Networking 1", units: 3, prereq: "None" },
+        { code: "PE 2", title: "Rhythmic Activities", units: 2, prereq: "PE 1" },
+        { code: "NSTP 2", title: "National Service Training Program 2", units: 3, prereq: "NSTP 1" }
+    ],
+    "2nd-1st": [
+        { code: "HUM 1", title: "Art Appreciation", units: 3, prereq: "None" },
+        { code: "IS104", title: "Systems Analysis and Design", units: 3, prereq: "2nd Year Standing, CC103" },
+        { code: "CC104", title: "Data Structures and Algorithms", units: 3, prereq: "CC103" },
+        { code: "CC105", title: "Information Management", units: 3, prereq: "CC103" },
+        { code: "PF101", title: "Object-Oriented Programming", units: 3, prereq: "CC103, PT101, NET101" },
+        { code: "NET102", title: "Networking 2", units: 3, prereq: "NET101, PT101" },
+        { code: "PE 3", title: "Individual and Dual Sports", units: 2, prereq: "PE 1" }
+    ],
+    "2nd-2nd": [
+        { code: "SOCSCI 1", title: "Understanding the Self", units: 3, prereq: "None" },
+        { code: "SOCSCI 2", title: "Readings in Philippine History", units: 3, prereq: "None" },
+        { code: "HCI101", title: "Introduction to Human Computer Interaction", units: 3, prereq: "None" },
+        { code: "SE101", title: "Software Engineering", units: 3, prereq: "CC105, PF101, IS104" },
+        { code: "IPT101", title: "Integrative Programming and Technologies 1", units: 3, prereq: "PT101, PF101" },
+        { code: "IM101", title: "Advanced Database Systems", units: 3, prereq: "CC105, PF101, IS104" },
+        { code: "PE 4", title: "Team Sports", units: 2, prereq: "PE 1" }
+    ],
+    "3rd-1st": [
+        { code: "SOCSCI 3", title: "The Contemporary World", units: 3, prereq: "None" },
+        { code: "RIZAL", title: "The Life and Works of Rizal", units: 3, prereq: "None" },
+        { code: "MS101", title: "Discrete Mathematics", units: 3, prereq: "3rd Year Standing, CC104, PF101" },
+        { code: "SPI101", title: "Social Professional Issues 1", units: 3, prereq: "3rd Year Standing, SE101" },
+        { code: "AR101", title: "Architecture and Organization", units: 3, prereq: "3rd Year Standing, CC103" },
+        { code: "IPT102", title: "Integrative Programming and Technologies 2 (Electives)", units: 3, prereq: "3rd Year Standing, IPT101" },
+        { code: "SIA101", title: "Systems Integration and Architecture 1", units: 3, prereq: "3rd Year Standing, IPT101" }
+    ],
+    "3rd-2nd": [
+        { code: "HUM 2", title: "Ethics", units: 3, prereq: "None" },
+        { code: "AL101", title: "Algorithms and Complexity", units: 3, prereq: "MS101" },
+        { code: "MS102", title: "Quantitative Methods", units: 3, prereq: "3rd Year Standing, MS101" },
+        { code: "CC106", title: "Application Development and Emerging Technologies", units: 3, prereq: "3rd Year Standing, SE101" },
+        { code: "IAS101", title: "Fundamental of Information Assurance and Security 1", units: 3, prereq: "3rd Year Standing, SIA101" },
+        { code: "SIA102", title: "Systems Integration and Architecture 2 (Electives)", units: 3, prereq: "3rd Year Standing, SIA101" }
+    ],
+    "4th-1st": [
+        { code: "CAP101*", title: "Capstone Project and Research 1", units: 3, prereq: "4th Year Standing, IAS101, MS102" },
+        { code: "PRC101*", title: "Practicum 1", units: 3, prereq: "4th Year Standing, MS102, IAS101, CC106" },
+        { code: "AL102", title: "Automata Theory and Formal Language", units: 3, prereq: "AL101" },
+        { code: "IAS102", title: "Information Assurance and Security 2", units: 3, prereq: "IAS101" }
+    ],
+    "4th-2nd": [
+        { code: "CAP102", title: "Capstone Project and Research 2", units: 3, prereq: "CAP101" },
+        { code: "PRC102", title: "Practicum 2", units: 3, prereq: "PRC101" },
+        { code: "SAM101", title: "Systems Administration and Maintenance", units: 3, prereq: "IAS102" }
+    ]
+};
+
+const curriculumTable = document.getElementById('curriculum-table').getElementsByTagName('tbody')[0];
+const curriculumYearSelect = document.getElementById('curriculum-year');
+const curriculumSemSelect = document.getElementById('curriculum-sem');
+
+function displayCurriculum(curriculum) {
+    curriculumTable.innerHTML = '';
+    curriculum.forEach(item => {
+        const row = curriculumTable.insertRow();
+        row.insertCell().textContent = item.code;
+        row.insertCell().textContent = item.title;
+        row.insertCell().textContent = item.units;
+        row.insertCell().textContent = item.prereq;
+    });
+}
+
+function filterCurriculum() {
+    const selectedYear = curriculumYearSelect.value;
+    const selectedSem = curriculumSemSelect.value;
+
+    let filteredCurriculum = [];
+
+    for (const key in curriculumData) {
+        const [year, sem] = key.split('-');
+
+        const yearMatch = selectedYear === 'all' || year === selectedYear;
+        const semMatch = selectedSem === 'all' || sem === selectedSem;
+
+        if (yearMatch && semMatch) {
+            filteredCurriculum = filteredCurriculum.concat(curriculumData[key]);
+        }
+    }
+    displayCurriculum(filteredCurriculum);
+}
+
+// Initial display:
+filterCurriculum();
+
+// Add event listeners to the select elements
+curriculumYearSelect.addEventListener('change', filterCurriculum);
+curriculumSemSelect.addEventListener('change', filterCurriculum);
+const tabButtons = document.querySelectorAll('.tab-button');
+const tabContents = document.querySelectorAll('.tab-content');
+
+tabButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const tabId = button.dataset.tab;
+
+        tabButtons.forEach(btn => btn.classList.remove('active'));
+        tabContents.forEach(content => content.style.display = 'none');
+
+        button.classList.add('active');
+        document.getElementById(tabId).style.display = 'block';
+    });
 });

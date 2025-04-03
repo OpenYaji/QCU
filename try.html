@@ -17,6 +17,7 @@
         <nav class="navbar">
             <ul class="dropdown">
                 <li>
+                    
                     <div class="user-icon-container">
                         <i class='bx bx-toggle-right header-icons toggle-night-mode'></i>
                         <i class='bx bx-bell header-icons notification'></i>
@@ -27,6 +28,7 @@
                             <a href="/index.html" class="logout-link"><i class='bx bx-log-out'></i> Logout</a>
                         </div>
                     </div>
+
                 </li>
             </ul>
         </nav>
@@ -60,30 +62,25 @@
                     <ul class="dropdown-menu">
                         <li class="nav-item"><a class="nav-link dropdown-title">Grades</a></li>
                         <li class="nav-item"><a href="#" class="nav-link dropdown-link" data-section="currentGrades">Current Academic Performance</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link dropdown-link" data-section="pastGrades">Past Grades</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link dropdown-link" data-section="pastGrades">Grades History</a></li>
                     </ul>
                 </li>
-                <li class="nav-item dropdown-container">
-                    <a href="#" class="nav-link dropdown-toggle" data-section="curriculum">
+                <li class="nav-item ">
+                    <a href="#" class="nav-link" data-section="curriculum">
                         <span class="material-symbols-rounded">book</span>
                         <span class="nav-label">Curriculum</span>
-                        <span class="dropdown-icon material-symbols-rounded">keyboard_arrow_down</span>
                     </a>
                     <ul class="dropdown-menu">
                         <li class="nav-item"><a class="nav-link dropdown-title">Curriculum</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link dropdown-link" data-section="computerStudies">College Of Computer Studies</a></li>
                     </ul>
                 </li>
-                <li class="nav-item dropdown-container">
-                    <a href="#" class="nav-link dropdown-toggle" data-section="clearance">
+                <li class="nav-item">
+                    <a href="#" class="nav-link" data-section="clearance">
                         <span class="material-symbols-rounded">assignment_turned_in</span>
                         <span class="nav-label">Clearance</span>
-                        <span class="dropdown-icon material-symbols-rounded">keyboard_arrow_down</span>
                     </a>
                     <ul class="dropdown-menu">
                         <li class="nav-item"><a class="nav-link dropdown-title">Clearance</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link dropdown-link" data-section="accountingClearance">Accounting</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link dropdown-link" data-section="documentClearance">Documents</a></li>
                     </ul>
                 </li>
                 <li class="nav-item">
@@ -175,7 +172,7 @@
                         <div class="card">
                             <img src="/images/announce1.jpg" alt="QCUCAT">
                             <div class="card-content">
-                                <h4>QCUCAT</h4>
+                                <h1>QCUCAT</h1>
                                 <p>Latest updates on college admission test.</p>
                                 <a href="#"><i class='bx bx-link-external'></i></a>
                             </div>
@@ -183,7 +180,7 @@
                         <div class="card">
                             <img src="/images/announcement5.jpg" alt="Web Design">
                             <div class="card-content">
-                                <h4>Web Design</h4>
+                                <h1>Web Design</h1>
                                 <p>New web design workshop schedule.</p>
                                 <a href="#"><i class='bx bx-link-external'></i></a>
                             </div>
@@ -199,7 +196,7 @@
                         <div class="card">
                             <img src="/images/event1.jpg" alt="Event 1">
                             <div class="card-content">
-                                <h4>Campus Event</h4>
+                                <h1>Campus Event</h1>
                                 <p>Join us for the upcoming campus event.</p>
                                 <a href="#"><i class='bx bx-link-external'></i></a>
                             </div>
@@ -207,7 +204,7 @@
                         <div class="card">
                             <img src="/images/event3.jpg" alt="Event 2">
                             <div class="card-content">
-                                <h4>Workshop</h4>
+                                <h1>Workshop</h1>
                                 <p>Technical skills workshop this weekend.</p>
                                 <a href="#"><i class='bx bx-link-external'></i></a>
                             </div>
@@ -219,16 +216,24 @@
                     <div class="section-header">
                         <h2>Latest News</h2>
                     </div>
-                    <div class="slider-wrapper">
-                        <div class="slider">
-                            <img id="slide-1" src="/images/slider1.jpeg" alt="News 1">
-                            <img id="slide-2" src="/images/news5.jpg" alt="News 2">
-                            <img id="slide-3" src="/images/news2.jpg" alt="News 3">
-                        </div>
-                        <div class="slider-nav">
-                            <a href="#slide-1"></a>
-                            <a href="#slide-2"></a>
-                            <a href="#slide-3"></a>
+                    <div class="slider-container">
+                        <div class="slider-wrapper">
+                            <div class="slider">
+                                <div class="slide active">
+                                    <img src="/images/slider1.jpeg" alt="News 1">
+                                </div>
+                                <div class="slide">
+                                    <img src="/images/news5.jpg" alt="News 2">
+                                </div>
+                                <div class="slide">
+                                    <img src="/images/news2.jpg" alt="News 3">
+                                </div>
+                            </div>
+                            <div class="slider-controls">
+                                <button class="control-dot active" data-slide="0"></button>
+                                <button class="control-dot" data-slide="1"></button>
+                                <button class="control-dot" data-slide="2"></button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -394,35 +399,97 @@
             </div>
         </div>
         <div class="content-section" id="curriculum">
-            <div class="box">
-                <div class="image-wrapper">
-                    <p class="width-text"></p>
-                    <img src="/images/profile.png" alt="Picture">
+        <div class="curriculum-wrapper">
+            <div class="curriculum-header">
+                <h2>Curriculum Overview</h2>
+                <p style="font-size: 1.5em;">Bachelor of Science in Information Technology</p>
+            </div>
+        
+            <div class="curriculum-controls">
+                <div class="filter-controls">
+                    <select id="curriculum-year" class="grade-select">
+                        <option value="1st">1st Year</option>
+                        <option value="2nd">2nd Year</option>
+                        <option value="3rd">3rd Year</option>
+                        <option value="4th">4th Year</option>
+                    </select>
+        
+                    <select id="curriculum-sem" class="grade-select">
+                        <option value="1st">1st Semester</option>
+                        <option value="2nd">2nd Semester</option>
+                    </select>
                 </div>
-                <h2>Curriculum</h2>
-                <p>Curriculum information.</p>
+            </div>
+        
+            <div class="curriculum-table-container">
+                <table class="curriculum-table" id="curriculum-table">
+                    <thead>
+                        <tr>
+                            <th>Code</th>
+                            <th>Title</th>
+                            <th>Units</th>
+                            <th>Prerequisites</th>
+                        </tr>
+                    </thead>
+                    <tbody id="curriculumTableBody">
+                        </tbody>
+                </table>
             </div>
         </div>
-        <div class="content-section" id="computerStudies">
-            <div class="box">
-                <div class="image-wrapper">
-                    <p class="width-text"></p>
-                    <img src="/images/profile.png" alt="Picture">
+    </div>
+    <div class="content-section" id="clearance">
+        <div class="clearance-grid">
+            <div class="clearance-summary">
+                <h2>Clearance Summary</h2>
+                <div class="overall-status">
+                    <span class="status-icon cleared"></span>
+                    <span class="status-text cleared">CLEARED</span>
                 </div>
-                <h2>College of Computer Studies</h2>
-                <p>Curriculum details for the College of Computer Studies.</p>
+            </div>
+    
+            <div class="clearance-offices">
+                <h3>Office Status</h3>
+                <div class="office-status-item">
+                    <h3>OSAS</h3>
+                    <span class="office-status cleared">CLEARED</span>
+                    <p>Return Slip: CLEARED</p>
+                </div>
+                <div class="office-status-item">
+                    <h3>Registrar</h3>
+                    <span class="office-status not-cleared">NOT CLEARED</span>
+                    <p>Reason: SF10 Copy for QCU</p>
+                </div>
+                <div class="office-status-item">
+                    <h3>Accounting</h3>
+                    <span class="office-status cleared">CLEARED</span>
+                    <p>Current Balance: ₱ 0.00</p>
+                    <p>Previous Balance: ₱ 0.00</p>
+                </div>
+            </div>
+    
+            <div class="student-info">
+                <h3>Student Information</h3>
+                <p>Student ID: 23-0000</p>
+                <p>Name: John Rey Calipes</p>
+            </div>
+    
+            <div class="document-requests">
+                <h3>Document Requests</h3>
+                <button class="action-button">Transcript of Records</button>
+                <button class="action-button">Certificate of Enrollment</button>
+                <button class="action-button">Good Moral Certificate</button>
+            </div>
+    
+            <div class="payment-history">
+                <h3>Payment History</h3>
+                <div class="payment-items">
+                    <div class="payment-item">Tuition Fee (2024-03-15) ₱ 5,000.00</div>
+                    <div class="payment-item">Miscellaneous Fee (2024-02-28) ₱ 1,500.00</div>
+                    <div class="payment-item">Library Fee (2024-01-10) ₱ 500.00</div>
+                </div>
             </div>
         </div>
-        <div class="content-section" id="clearance">
-            <div class="box">
-                <div class="image-wrapper">
-                    <p class="width-text"></p>
-                    <img src="/images/profile.png" alt="Picture">
-                </div>
-                <h2>Clearance</h2>
-                <p>Clearance information.</p>
-            </div>
-        </div>
+    </div>
          <div class="content-section" id="accountingClearance">
             <div class="box">
                 <div class="image-wrapper">
@@ -444,45 +511,171 @@
             </div>
         </div>
         <div class="content-section" id="schedule">
-            <div class="box">
-                <div class="image-wrapper">
-                    <p class="width-text"></p>
-                    <img src="/images/profile.png" alt="Picture">
-                </div>
-                <h2>Class Schedule</h2>
-                <p>Your class schedule.</p>
+            <div class="schedule-container">
+                <h2>Class Schedule - 2nd Year, 2nd Semester</h2>
+                <table class="schedule-table">
+                    <thead>
+                        <tr>
+                            <th>Day</th>
+                            <th>Subject</th>
+                            <th>Time</th>
+                            <th>Instructor</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Monday</td>
+                            <td>Advanced Database</td>
+                            <td>3:00 PM - 9:00 PM</td>
+                            <td>Prof. Santos</td>
+                        </tr>
+                        <tr>
+                            <td>Tuesday</td>
+                            <td>Integrated Programming</td>
+                            <td>2:00 PM - 8:00 PM</td>
+                            <td>Prof. Soriano</td>
+                        </tr>
+                        <tr>
+                            <td>Wednesday</td>
+                            <td colspan="3">Rest Day</td>
+                        </tr>
+                        <tr>
+                            <td>Thursday</td>
+                            <td>UTS and RIPH</td>
+                            <td>7:00 AM - 10:00 AM / 11:00 AM - 2:00 PM</td>
+                            <td>Prof. Randy / Prof. Palmiano</td>
+                        </tr>
+                        <tr>
+                            <td>Friday</td>
+                            <td>PE 4 and HCI</td>
+                            <td>11:00 AM - 1:00 PM / 2:00PM - 8:00PM</td>
+                            <td>Prof. Denver/ Prof. Tanjente </td>
+                        </tr>
+                        <tr>
+                            <td>Saturday</td>
+                            <td>Software Engineering</td>
+                            <td>(Time to be determined)</td>
+                            <td>Prof. Distor</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
         <div class="content-section" id="settings">
-            <div class="box">
-                <div class="image-wrapper">
-                    <p class="width-text"></p>
-                    <img src="/images/profile.png" alt="Picture">
-                </div>
+            <div class="settings-container">
                 <h2>Settings</h2>
-                <p>Your account settings.</p>
+        
+                <div class="settings-tabs">
+                    <button class="tab-button active" data-tab="account">Account</button>
+                    <button class="tab-button" data-tab="notifications">Notifications</button>
+                    <button class="tab-button" data-tab="appearance">Appearance</button>
+                    <button class="tab-button" data-tab="security">Security</button>
+                </div>
+        
+                <div class="tab-content" id="account">
+                    <h3>Account Settings</h3>
+                    <div class="setting-item">
+                        <label for="profile-picture">Profile Picture:</label>
+                        <input type="file" id="profile-picture">
+                    </div>
+                    <div class="setting-item">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" value="John Rey Calipes">
+                    </div>
+                    <div class="setting-item">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" value="johnrey@example.com">
+                    </div>
+                    <div class="setting-item">
+                        <button>Change Password</button>
+                    </div>
+                </div>
+        
+                <div class="tab-content" id="notifications" style="display: none;">
+                    <h3>Notification Settings</h3>
+                    <div class="setting-item">
+                        <label>Email Notifications:</label>
+                        <input type="checkbox" checked>
+                    </div>
+                    <div class="setting-item">
+                        <label>Grade Updates:</label>
+                        <input type="checkbox" checked>
+                    </div>
+                    <div class="setting-item">
+                        <label>Announcements:</label>
+                        <input type="checkbox">
+                    </div>
+                </div>
+        
+                <div class="tab-content" id="appearance" style="display: none;">
+                    <h3>Appearance Settings</h3>
+                    <div class="setting-item">
+                        <label>Theme:</label>
+                        <select>
+                            <option value="light">Light Mode</option>
+                            <option value="dark">Dark Mode</option>
+                        </select>
+                    </div>
+                    <div class="setting-item">
+                        <label>Font Size:</label>
+                        <input type="range" min="12" max="20" value="16">
+                    </div>
+                </div>
+        
+                <div class="tab-content" id="security" style="display: none;">
+                    <h3>Security Settings</h3>
+                    <div class="setting-item">
+                        <label>Two-Factor Authentication:</label>
+                        <input type="checkbox">
+                    </div>
+                    <div class="setting-item">
+                        <button>Login History</button>
+                    </div>
+                </div>
+        
             </div>
         </div>
         <div class="content-section" id="support">
-             <div class="chatbot">
-                <header>
-                    <h2>Support</h2>
-                </header>
-                <ul class="chatbox">
-                    <li class="chat incoming">
-                        <span class="material-symbols-rounded">support_agent</span>
-                        <p>Hi there<br> How can I help you today?</p>
-                    </li>
-                    <li class="chat outgoing">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                    </li>
-                </ul>
-                <div class="chat-input">
-                    <textarea placeholder="Enter a message..."></textarea>
-                    <span id="send-btn" class="material-symbols-rounded">send</span>
+            <div class="support-section">
+                <h2>Support</h2>
+            
+                <div class="contact-section">
+                    <h3>Contact Us</h3>
+                    <p>Email: support@example.com</p>
+                    <p>Phone: 1-800-SUPPORT</p>
+                    <form class="contact-form">
+                        <label for="subject">Subject:</label>
+                        <input type="text" id="subject">
+                        <label for="message">Message:</label>
+                        <textarea id="message"></textarea>
+                        <button type="submit">Send Message</button>
+                    </form>
                 </div>
-             </div>
-        </div>>
+            
+                <div class="faq-section">
+                    <h3>Frequently Asked Questions</h3>
+                    <input type="text" id="faq-search" placeholder="Search FAQs...">
+                    <div class="faq-category">
+                        <h4>Account</h4>
+                        <div class="faq-item">
+                            <p class="faq-question">How do I change my password?</p>
+                            <p class="faq-answer">Go to your account settings and click "Change Password."</p>
+                        </div>
+                        <div class="faq-item">
+                            <p class="faq-question">How do I update my profile picture?</p>
+                            <p class="faq-answer">In your profile settings, click "Upload Profile Picture."</p>
+                        </div>
+                    </div>
+                    <div class="faq-category">
+                        <h4>Grades</h4>
+                        <div class="faq-item">
+                            <p class="faq-question">How do I view my grades?</p>
+                            <p class="faq-answer">Click on the "Grades" tab in the dashboard.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <footer>
 
