@@ -5,16 +5,17 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+      scroll-behavior: smooth;
+
   font-family: "Poppins", sans-serif;
 }
 
 :root {
   --second-bg-color: #f0f0f0; /* Light gray background */
   --bg-color: #333; /* Dark background for shadows */
-  --main-color: #05196e; /* Blue main color */
+  --main-color:  #05196e; /* Blue main color */
   --text-color: #fff; /* White text color */
 
-  /* Night mode variables */
   --night-bg: #333;
   --night-text: #fff;
   --night-second-bg: #222;
@@ -31,7 +32,7 @@ html{
 
 body {
   min-height: 100vh;
-  background: #CBD4FF;
+  background: #f0f0f5;
   background-attachment: fixed;
   margin-top: 1%;
   margin-left: 50px;
@@ -42,43 +43,45 @@ body {
   transition: background-color 0.3s, color 0.3s; /* Smooth transitions */
 }
 
-body.night-mode {
-  background: linear-gradient(var(--night-gradient-start), var(--night-gradient-end));
-  color: var(--night-text);
-}
-
-body.night-mode .portfolio,
-body.night-mode .box-dashboard {
-  background-color: var(--night-second-bg);
-}
-
-body.night-mode .box-dashboard h2,
-body.night-mode .box-dashboard p {
-  color: var(--night-text);
-}
-
-
 .header {
   width: 100%;
+  height: 80px;
   position: fixed;
   top: 0;
   right: 0;
-  background-color: #EEF2FF;
+  background-color: #f0f0f5;
   display: flex;
   align-items: center;
   justify-content: right;
   z-index: 1;
   padding: .8rem;
   transition: background-color 0.3s; /* Smooth transitions */
-}
+  border-bottom: .1rem solid rgba(0, 0, 0, .2) ;
 
+}
+.header.sticky{
+  border-bottom: .1rem solid rgba(0, 0, 0, .2) ;
+}
+.header .user-icon-container h4 {
+  display: block;
+  margin-right: 200px; /* Consider removing this for better centering */
+  text-decoration: none;
+  color: black; /* Explicitly set text color */
+  transition: color 0.3s;
+  font-size: 28px; /* Slightly smaller, more modern size */
+  font-weight: 600; /* Slightly lighter weight for better readability */
+  cursor: default;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* A clean, widely used sans-serif font */
+  letter-spacing: -0.5px; /* Slightly reduce letter spacing for a tighter look */
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.1); /* Subtle text shadow for depth */
+}
 body.night-mode .header {
   background-color: var(--night-header-bg);
 }
 
 .header h3 {
   margin-right: 15px;
-  font-size: 15px;
+  font-size: 13px;
   font-weight: 100;
   transition: color 0.3s;
 }
@@ -97,11 +100,67 @@ body.night-mode .header h1 {
 }
 
 .header-icons {
-  font-size: 40px;
+  font-size: 30px;
   color: var(--main-color);
   margin-right: 20px;
   cursor: pointer;
   transition: color 0.3s;
+}
+/* CSS for the dark mode tooltip in the header */
+.user-icon-container .dark-mode-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.user-icon-container .tooltip-dark-mode {
+  position: absolute;
+  bottom: -25px; /* Adjust distance below the icon */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  color: black;
+  padding: 3px 6px;
+  border-radius: 3px;
+  font-size: 0.6rem;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
+  z-index: 10;
+}
+
+.user-icon-container .dark-mode-wrapper:hover .tooltip-dark-mode {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* CSS for the notification tooltip in the header */
+.user-icon-container .notification-wrapper {
+  position: relative;
+  display: inline-block;
+  margin-left: 10px; /* Add some spacing between icons */
+}
+
+.user-icon-container .tooltip-notification {
+  position: absolute;
+  bottom: -25px; /* Adjust distance below the icon */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  color: black;
+  padding: 3px 6px;
+  border-radius: 3px;
+  font-size: 0.6rem;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
+  z-index: 10;
+}
+
+.user-icon-container .notification-wrapper:hover .tooltip-notification {
+  opacity: 1;
+  visibility: visible;
 }
 
 body.night-mode .header-icons {
@@ -133,12 +192,11 @@ body.night-mode .header-icons {
 }
 
 .user-profile-image {
-  width: 48px;
-  height: 48px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
   cursor: pointer;
   object-fit: cover;
-  margin-top: 0.5rem;
   margin-right: 1.5rem;
 }
 
@@ -208,15 +266,37 @@ body.night-mode .sidebar {
   right: 20px;
   height: 35px;
   width: 35px;
-  color: var(--main-color);
+  color: #EEF2FF;
   border: none;
   cursor: pointer;
   display: flex;
-  background: #EEF2FF;
+  background: var(--main-color);
   align-items: center;
   justify-content: center;
   border-radius: 8px;
   transition: 0.4s ease, background-color 0.3s, color 0.3s;
+}
+/* New CSS for the small tooltip text with background, always below */
+.sidebar-header .sidebar-toggler .tooltip-text {
+  position: absolute;
+  bottom: -25px; /* Adjust distance below the icon */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  color: black;
+  padding: 3px 6px;
+  border-radius: 3px;
+  font-size: 0.6rem;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
+  z-index: 10; /* Ensure it appears above other elements */
+}
+
+.sidebar-header .sidebar-toggler:hover .tooltip-text {
+  opacity: 1;
+  visibility: visible;
 }
 
 body.night-mode .sidebar-header .sidebar-toggler, body.night-mode .sidebar-menu-button {
@@ -233,14 +313,16 @@ body.night-mode .sidebar-header .sidebar-toggler, body.night-mode .sidebar-menu-
   font-size: 1.75rem;
   transition: 0.4s ease;
 }
-
-.sidebar.collapsed .sidebar-header .sidebar-toggler span {
-  transform: rotate(180deg);
-}
-
 .sidebar-header .sidebar-toggler:hover {
   background: #EEF2FF;
   color: var(--main-color);
+} 
+.sidebar-collapsed .sidebar-header .sidebar-toggler::before {
+  content: "Expand Menu";
+}
+
+.sidebar-expanded .sidebar-header .sidebar-toggler::before {
+  content: "Collapse Menu";
 }
 
 .sidebar-nav .nav-list {
@@ -432,12 +514,103 @@ body.night-mode .dropdown-menu .nav-item .nav-link {
 .welcome-box {
   background: linear-gradient(135deg, var(--main-color), #0056b3);
   color: white;
-  padding: 2.375rem; /* Reduced by 5% */
-  border-radius: 17.8125px; /* Reduced by 5% */
-  margin-bottom: 2.375rem; /* Reduced by 5% */
-  font-size: 1.1875rem; /* Reduced by 5% */
+  padding: 2.375rem;
+  border-radius: 17.8125px;
+  margin-bottom: 2.375rem;
+  font-size: 1.1875rem;
+  display: flex; /* Enable flexbox for layout */
+  justify-content: space-between; /* Put space between text and image */
+  align-items: center; /* Vertically align text and image */
+  animation: fadeInWelcome 1s ease-in-out; /* Fade-in animation */
+  transform: translateY(0); /* Initial position */
+  opacity: 1; /* Initial opacity */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* For hover effects */
 }
 
+@keyframes fadeInWelcome {
+  0% { opacity: 0; transform: translateY(-10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.welcome-box:hover {
+  transform: translateY(-5px); /* Subtle lift on hover */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow on hover */
+}
+
+.welcome-text {
+  flex: 1; /* Allow text to take up available space */
+  margin-right: 20px; /* Spacing between text and image */
+  animation: slideInLeftWelcome 0.8s ease-out; /* Slide-in animation for text */
+  transform: translateX(0); /* Initial position */
+  opacity: 1; /* Initial opacity */
+}
+
+@keyframes slideInLeftWelcome {
+  0% { opacity: 0; transform: translateX(-50px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+.welcome-image {
+  width: 150px; /* Adjust image width */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 8px; /* Optional: Image border radius */
+  overflow: hidden; /* Clip any overflow */
+  animation: slideInRightWelcome 0.8s ease-out, floatUpDown 3s ease-in-out infinite alternate; /* Slide-in and float animations */
+  transform: translateX(0); /* Initial position */
+  opacity: 1; /* Initial opacity */
+  transition: transform 0.3s ease-in-out; /* For hover effects on container */
+}
+
+@keyframes slideInRightWelcome {
+  0% { opacity: 0; transform: translateX(50px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes floatUpDown {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-15px); /* Adjust float height */
+  }
+}
+
+.welcome-image:hover {
+  transform: scale(1.05) translateY(-5px); /* Slight zoom and lift on container hover */
+}
+
+.welcome-image img {
+  display: block; /* Remove default inline spacing */
+  width: 100%; /* Image fills container */
+  height: auto;
+  object-fit: cover; /* Cover container without distortion */
+  transition: transform 0.3s ease-in-out; /* Smooth hover effect on image */
+}
+
+.welcome-image img:hover {
+  transform: scale(1.1); /* More pronounced zoom on image hover */
+}
+
+.welcome-box .date {
+  /* Add your date styles here */
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.welcome-box h1 {
+  /* Add your main welcome heading styles here */
+  font-size: 2rem;
+  margin-bottom: 0.3rem;
+}
+
+.welcome-box h3 {
+  /* Add your sub-welcome message styles here */
+  font-size: 1.1rem;
+  font-weight: normal;
+  opacity: 0.9;
+}
+/* end ng welcome box */
 .stats-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(296.875px, 1fr)); /* Reduced by 5% */
@@ -605,12 +778,8 @@ body.night-mode .dropdown-menu .nav-item .nav-link {
 .slider-nav a.active {
   background: var(--main-color);
 }
-
-body.night-mode .box {
-  background-color: var(--night-second-bg);
-  border-color: #555;
-}
-
+  /*grades section */
+  
 .grades-container {
   padding: 2rem;
   display: grid;
@@ -628,6 +797,14 @@ body.night-mode .box {
   padding: 2rem;
   border-radius: 15px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  animation: slideInDownSummary 0.8s ease-out forwards; /* Slide in from top */
+  transform: translateY(-20px); /* Initial position for the slide-in */
+  opacity: 0; /* Initial opacity for the fade-in */
+}
+
+@keyframes slideInDownSummary {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .summary-header {
@@ -637,7 +814,7 @@ body.night-mode .box {
 .summary-header h2 {
   font-size: 1.8rem;
   margin-bottom: 0.5rem;
-  color: #fff; /* Ensure text is visible on dark background */
+  color: #fff; 
 }
 
 .summary-stats {
@@ -726,9 +903,10 @@ body.night-mode .box {
       "performance";
   }
 }
+  /*grades parent section */
 
 
-
+/* Current Academic Performance section */
 .grades-header {
   display: flex;
   justify-content: space-between;
@@ -740,6 +918,14 @@ body.night-mode .box {
   border-radius: 17.8125px; /* Welcome-box like border-radius */
   font-size: 1.1875rem; /* Welcome-box like font size */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Adjusted box shadow */
+  animation: slideInDownGradesHeader 0.8s ease-out forwards; /* Slide in from top */
+  transform: translateY(-20px); /* Initial position for the slide-in */
+  opacity: 0; /* Initial opacity for the fade-in */
+}
+
+@keyframes slideInDownGradesHeader {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* If you need to style the h2 within the grades-header specifically */
@@ -1055,6 +1241,14 @@ body.night-mode .box {
   border-radius: 17.8125px;
   font-size: 1.1875rem;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  animation: slideInDownCurriculumHeader 0.8s ease-out forwards; /* Slide in from top */
+  transform: translateY(-20px); /* Initial position for the slide-in */
+  opacity: 0; /* Initial opacity for the fade-in */
+}
+
+@keyframes slideInDownCurriculumHeader {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .curriculum-header h2 {
@@ -1136,6 +1330,14 @@ body.night-mode .box {
   font-size: 1.1875rem; /* Match welcome-box font-size */
   grid-column: 1 / 3;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Adjusted box-shadow */
+  animation: slideInDownClearanceSummary 0.8s ease-out forwards; /* Slide in from top */
+  transform: translateY(-20px); /* Initial position for the slide-in */
+  opacity: 0; /* Initial opacity for the fade-in */
+}
+
+@keyframes slideInDownClearanceSummary {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .clearance-summary h2 {
@@ -1235,6 +1437,13 @@ body.night-mode .box {
   padding: 2rem;
   box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
   margin: 2rem;
+  animation: fadeInScheduleWrapper 1s ease-out forwards; /* Fade in wrapper */
+  opacity: 0;
+}
+
+@keyframes fadeInScheduleWrapper {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 .schedule-container {
@@ -1244,17 +1453,40 @@ body.night-mode .box {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Match grades-container box-shadow */
   max-width: 1200px; /* Adjust as needed to match grades-container max-width */
   margin-top: 37px;
+  animation: slideInDownScheduleContainer 0.8s ease-out forwards 0.2s; /* Slide in container with delay */
+  transform: translateY(-20px);
+  opacity: 0;
 }
+
+@keyframes slideInDownScheduleContainer {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 .schedule-container h2 {
   color: var(--main-color);
   font-size: 1.8rem;
   margin-bottom: 2rem;
+  animation: fadeInHeading 0.6s ease-out forwards 0.5s; /* Fade in heading with delay */
+  opacity: 0;
 }
 
+@keyframes fadeInHeading {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
 
 .schedule-table {
   width: 100%;
   border-collapse: collapse;
+  animation: slideUpTable 0.8s ease-out forwards 0.8s; /* Slide up table with delay */
+  transform: translateY(20px);
+  opacity: 0;
+}
+
+@keyframes slideUpTable {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .schedule-table th, .schedule-table td {
@@ -1289,7 +1521,20 @@ body.night-mode .box {
   border-radius: 15px;
   padding: 2rem;
   box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
-  transition: background 0.3s;
+  transition: background 0.3s, transform 0.3s ease-in-out; /* Add transform for potential hover */
+  animation: fadeInSettingsWrapper 1s ease-out forwards; /* Fade in wrapper */
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+@keyframes fadeInSettingsWrapper {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+#settings:hover {
+  transform: translateY(-5px); /* Subtle lift on hover */
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1); /* Slightly enhanced shadow on hover */
 }
 
 #settings h2 {
@@ -1303,11 +1548,26 @@ body.night-mode .box {
   border-radius: 17.8125px;
   font-size: 1.1875rem;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  animation: slideInDownSettingsHeader 0.8s ease-out forwards 0.2s; /* Slide in header with delay */
+  transform: translateY(-20px);
+  opacity: 0;
+}
+
+@keyframes slideInDownSettingsHeader {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .settings-tabs {
   display: flex;
   margin-bottom: 1.5rem;
+  animation: fadeInSettingsTabs 0.6s ease-out forwards 0.5s; /* Fade in tabs with delay */
+  opacity: 0;
+}
+
+@keyframes fadeInSettingsTabs {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 .tab-button {
@@ -1317,6 +1577,7 @@ body.night-mode .box {
   margin-right: 0.5rem;
   cursor: pointer;
   border-radius: 6px;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth tab button transitions */
 }
 
 .tab-button.active {
@@ -1326,12 +1587,27 @@ body.night-mode .box {
 
 .tab-content {
   margin-bottom: 1.5rem;
+  animation: fadeInSettingsContent 0.6s ease-out forwards 0.7s; /* Fade in content with delay */
+  opacity: 0;
+}
+
+@keyframes fadeInSettingsContent {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 .setting-item {
   display: flex;
   align-items: center;
   margin-bottom: 1rem;
+  animation: slideInLeftSettingItem 0.5s ease-out forwards 0.9s; /* Slide in items with delay */
+  transform: translateX(-10px);
+  opacity: 0;
+}
+
+@keyframes slideInLeftSettingItem {
+  from { opacity: 0; transform: translateX(-10px); }
+  to { opacity: 1; transform: translateX(0); }
 }
 
 .setting-item label {
@@ -1356,6 +1632,12 @@ body.night-mode .box {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease-in-out; /* Smooth button transitions */
+}
+
+.setting-item button:hover {
+  background-color: #1976D2;
+  transform: scale(1.05); /* Slight scale on button hover */
 }
 /* end settings */
 /* support */
@@ -1365,11 +1647,24 @@ body.night-mode .box {
   padding: 2rem;
   box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
   margin: 2rem auto; /* Added auto to center */
-    margin-left: 65px; /* Adjusted margin for better alignment */
+  margin-left: 65px; /* Adjusted margin for better alignment */
   width: 1150px;
   height: auto;
   overflow: auto;
-  transition: background 0.3s;
+  transition: background 0.3s, transform 0.3s ease-in-out; /* Add transform for hover */
+  animation: fadeInSupportSection 1s ease-out forwards; /* Fade in wrapper */
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+@keyframes fadeInSupportSection {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.support-section:hover {
+  transform: translateY(-5px); /* Subtle lift on hover */
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1); /* Slightly enhanced shadow on hover */
 }
 
 .support-header {
@@ -1383,6 +1678,14 @@ body.night-mode .box {
   border-radius: 17.8125px;
   font-size: 1.1875rem;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  animation: slideInDownSupportHeader 0.8s ease-out forwards 0.2s; /* Slide in header */
+  transform: translateY(-20px);
+  opacity: 0;
+}
+
+@keyframes slideInDownSupportHeader {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* If you have h2 within the support header */
@@ -1401,6 +1704,14 @@ body.night-mode .box {
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   margin-bottom: 1.5rem;
+  animation: fadeInUpSupportSection 0.6s ease-out forwards 0.4s; /* Fade up sections */
+  opacity: 0;
+  transform: translateY(15px);
+}
+
+@keyframes fadeInUpSupportSection {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .contact-section h3,
@@ -1432,8 +1743,6 @@ body.night-mode .box {
   padding: 0.75rem;
   font-size: 1.1rem;
   margin-bottom: 1rem;
-  border: 1px solid #ddd;
-  border-radius: 4px;
 }
 
 .contact-form button {
@@ -1444,11 +1753,31 @@ body.night-mode .box {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease-in-out; /* Button hover transition */
+  animation: fadeInButton 0.5s ease-out forwards 0.7s; /* Fade in button */
+  opacity: 0;
+}
+
+@keyframes fadeInButton {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.contact-form button:hover {
+  background-color: #1976D2;
+  transform: scale(1.05); /* Slight scale on button hover */
 }
 
 .faq-item {
   border-bottom: 1px solid #eee;
   padding: 1rem 0;
+  animation: fadeInFaqItem 0.4s ease-out forwards 0.9s; /* Fade in FAQ items */
+  opacity: 0;
+}
+
+@keyframes fadeInFaqItem {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 .faq-question {

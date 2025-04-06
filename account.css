@@ -131,8 +131,8 @@ body.night-mode .header-icons {
 }
 
 .user-profile-image {
-    width: 48px;
-    height: 48px;
+    width: 32px;
+    height: 32px;
     border-radius: 50%;
     cursor: pointer;
     object-fit: cover;
@@ -175,4 +175,11 @@ body.night-mode .dropdown-content{
 
 .user-profile-container:hover .dropdown-content {
     display: block;
+}
+
+.qcu-logo {
+    width: 32px;
+    height: 32px;
+    margin-right: 1000px;
+    top: 0;
 }
